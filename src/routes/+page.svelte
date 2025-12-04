@@ -71,7 +71,12 @@
 	</div>
 	<div class="hidden flex-2/3 md:block">
 		<div class="sticky top-0 box-border h-screen py-6">
-			<div class="bg-driveway/30 h-full rounded-[2px]"></div>
+			<img
+				class="bg-driveway/30 block h-full w-full rounded-[2px] object-cover"
+				src="/images/hero-open-house.jpeg"
+				width="1696"
+				height="1696"
+				alt="Open House" />
 		</div>
 	</div>
 </div>
