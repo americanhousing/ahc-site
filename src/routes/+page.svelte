@@ -56,7 +56,7 @@
 		<div class="min-h-18 md:min-h-16"></div>
 		<div class="sticky bottom-6 h-0">
 			<a
-				class="font-die-a bg-blue hover:bg-blue/60 absolute bottom-full flex cursor-pointer justify-center gap-2 rounded-full px-4 py-3 text-[18px] leading-4 text-white md:self-start"
+				class="font-die-a bg-blue hover:bg-blue-dark absolute bottom-full flex cursor-pointer justify-center gap-2 rounded-full px-4 py-3 text-[18px] leading-4 text-white md:self-start"
 				href="https://luma.com/event/evt-Kqb67T3Xqzx4OIh"
 				data-luma-action="checkout"
 				data-luma-event-id="evt-Kqb67T3Xqzx4OIh">
