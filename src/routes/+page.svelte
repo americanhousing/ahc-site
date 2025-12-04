@@ -19,9 +19,12 @@
 		</h1>
 
 		<div class="hidden min-h-2 flex-1 md:block"></div>
-		<div
-			class="bg-driveway/30 mb-4 aspect-[360/285] h-auto w-full rounded-[2px] md:hidden">
-		</div>
+		<img
+			class="bg-driveway/30 mb-4 aspect-[360/285] h-auto w-full rounded-[2px] object-cover md:hidden"
+			src="/images/hero-open-house.jpeg"
+			width="1696"
+			height="1696"
+			alt="Open House" />
 
 		<div
 			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
