@@ -8,7 +8,7 @@
 	class="mx-auto box-border flex min-h-screen max-w-[1440px] gap-6 px-4 md:px-6">
 	<div class="flex min-w-96 flex-1/3 flex-col pt-6">
 		<img
-			src="/images/logo-color.svg"
+			src="./images/logo-color.svg"
 			width="101"
 			height="51"
 			alt="The American Housing Corporation" />
@@ -21,7 +21,7 @@
 		<div class="hidden min-h-2 flex-1 md:block"></div>
 		<img
 			class="bg-driveway/30 mb-4 aspect-[360/285] h-auto w-full rounded-[2px] object-cover md:hidden"
-			src="/images/hero-open-house.jpeg"
+			src="./images/hero-open-house.jpeg"
 			width="1696"
 			height="1696"
 			alt="Open House" />
@@ -65,7 +65,7 @@
 				data-luma-event-id="evt-Kqb67T3Xqzx4OIh">
 				RSVP
 				<img
-					src="/icons/arrow-right.svg"
+					src="./icons/arrow-right.svg"
 					width="14"
 					height="8"
 					alt="RSVP" />
@@ -76,7 +76,7 @@
 		<div class="sticky top-0 box-border h-screen py-6">
 			<img
 				class="bg-driveway/30 block h-full w-full rounded-[2px] object-cover"
-				src="/images/hero-open-house.jpeg"
+				src="./images/hero-open-house.jpeg"
 				width="1696"
 				height="1696"
 				alt="Open House" />
