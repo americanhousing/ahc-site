@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "die-a";
+	font-weight: 400;
+	font-style: normal;
+	src: url("/fonts/die-grotesk-a-regular.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "die-a";
+	font-weight: 500;
+	font-style: normal;
+	src: url("/fonts/die-grotesk-a-medium.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "die-d";
+	font-weight: 400;
+	font-style: normal;
+	src: url("/fonts/die-grotesk-d-regular.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "die-d";
+	font-weight: 500;
+	font-style: normal;
+	src: url("/fonts/die-grotesk-d-medium.woff2") format("woff2");
+	font-display: swap;
+}
+
+@theme {
+	--color-red: #953012;
+	--color-blue: #1968b4;
+	--color-driveway: #302d2d;
+	--color-cumulus: #fdfff1;
+	--color-cta: #00e949;
+
+	--font-die-a: "die-a", sans-serif;
+	--font-die-d: "die-d", sans-serif;
+}
