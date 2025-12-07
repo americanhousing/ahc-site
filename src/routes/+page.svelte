@@ -6,7 +6,7 @@
 
 <div
 	class="mx-auto box-border flex min-h-screen max-w-[1440px] gap-6 px-4 md:px-6">
-	<div class="flex min-w-96 flex-1/3 flex-col pt-6">
+	<div class="flex flex-1/3 flex-col pt-6 md:min-w-96">
 		<img
 			src="./images/logo-color.svg"
 			width="101"
