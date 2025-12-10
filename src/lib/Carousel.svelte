@@ -116,7 +116,7 @@
 					return;
 				}
 
-				indexForCurrentImage -= 1;
+				// indexForCurrentImage -= 1;
 
 				break;
 			}
@@ -126,7 +126,7 @@
 					return;
 				}
 
-				indexForCurrentImage += 1;
+				// indexForCurrentImage += 1;
 
 				break;
 			}
