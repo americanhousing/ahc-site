@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Accordion, Carousel, Logo, Marquee } from "$lib";
+	import { Accordion, Carousel, Logo, Marquee, Timeline } from "$lib";
 </script>
 
 <div class="fixed top-0 w-screen">
@@ -224,29 +224,111 @@
 			</h3>
 		</div>
 		<div class="h-6"></div>
-		<div class="flex flex-nowrap gap-6 overflow-scroll">
+		<Timeline
+			items={[
+				{ year: "2025", text: "Company founded in Austin, Texas." },
+				{ year: "2025", text: "Company founded in Austin, Texas." },
+				{ year: "2025", text: "Company founded in Austin, Texas." }
+			]} />
+		<div class="h-[200px]"></div>
+	</div>
+
+	<div class="bg-cumulus">
+		<div class="mx-auto flex max-w-[1440px] px-6">
 			<div
-				class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
-				<div
-					class="bg-cumulus/20 absolute bottom-6 left-6 flex gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
-					<span class="text-cumulus">2025</span>
-					Company founded in Austin, Texas.
-				</div>
+				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3">
 			</div>
 			<div
-				class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
+				class="border-l-driveway flex flex-1/3 flex-col border-l-1 pl-6 text-[24px] leading-[24px]">
+				<h4
+					class="font-die-d text-driveway text-[64px] leading-[64px] font-medium">
+					United We Build
+				</h4>
+				<div class="h-[64px]"></div>
 				<div
-					class="bg-cumulus/20 absolute bottom-6 left-6 flex gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
-					<span class="text-cumulus">2025</span>
-					Company founded in Austin, Texas.
+					class="text-driveway text-[24px] leading-[24px] font-medium">
+					The American Housing Corporation is a growing team of
+					engineers in Austin, Texas. We’re looking for hard workers
+					to reinvent the most important product in America — the
+					family home. If you’re ready to rebuild this country using
+					next-generation technology, we’d like to meet you.
+				</div>
+				<div class="h-[64px]"></div>
+				<a
+					href="/careers"
+					class="font-die-a bg-blue inline-flex cursor-pointer gap-2 self-start rounded-full px-4 py-3 text-[18px] leading-4 text-white">
+					Join Us
+					<img
+						src="./icons/arrow-right-white.svg"
+						width="14"
+						height="8"
+						alt="RSVP" />
+				</a>
+			</div>
+		</div>
+		<div class="h-[200px]"></div>
+	</div>
+
+	<div class="bg-cumulus">
+		<div class="mx-auto flex max-w-[1440px] px-6">
+			<h5 class="text-red text-[64px] leading-[64px] font-medium">
+				Move in. Make babies. Save America.
+			</h5>
+		</div>
+		<div class="h-[40px]"></div>
+	</div>
+
+	<div class="bg-blue">
+		<div
+			class="text-cumulus font-die-a mx-auto flex h-[800px] max-w-[1440px] flex-col p-6 text-[14px] leading-[20px]">
+			<img
+				class="w-full"
+				src="/images/american-housing.svg"
+				width="1385"
+				height="180"
+				alt="American Housing" />
+			<div class="flex-1"></div>
+			<div class="flex">
+				<div class="flex items-center gap-6">
+					<img
+						src="/icons/social-linkedin.svg"
+						width="18"
+						height="18"
+						alt="Linkedin" />
+					<img
+						src="/icons/social-x.svg"
+						width="20"
+						height="18"
+						alt="X" />
+					<img
+						src="/icons/social-instagram.svg"
+						width="18"
+						height="18"
+						alt="Instagram" />
+				</div>
+				<div class="flex-1"></div>
+				<div
+					class="text-cumulus font-die-a flex gap-12 text-[14px] leading-[20px]">
+					<a href="/contact">Contact</a>
+					<a href="/mission">Mission</a>
+					<a href="/faq">FAQs</a>
+					<a href="/research">Research</a>
 				</div>
 			</div>
-			<div
-				class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
-				<div
-					class="bg-cumulus/20 absolute bottom-6 left-6 flex gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
-					<span class="text-cumulus">2025</span>
-					Company founded in Austin, Texas.
+			<div class="h-[64px]"></div>
+			<div class="flex">
+				<div>
+					© The American Housing Corporation, 2025<br />
+					4422 Supply Ct Road, Austin, TX 78744 USA
+				</div>
+				<div class="flex-1"></div>
+				<div class="flex items-center gap-6">
+					<img
+						src="/images/flag-cumulus.svg"
+						width="52"
+						height="30"
+						alt="" />
+					<span>Always made<br />in the USA</span>
 				</div>
 			</div>
 		</div>
