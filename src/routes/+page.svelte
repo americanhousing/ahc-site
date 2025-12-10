@@ -124,7 +124,9 @@
 						Buy Land
 					</div>
 				</div>
-				<div class="bg-driveway aspect-[424/250] h-auto w-full"></div>
+				<div
+					class="bg-driveway rounded-[2px aspect-[424/250] h-auto w-full">
+				</div>
 			</div>
 			<div
 				class="border-l-driveway mr-6 flex flex-1/3 flex-col gap-6 border-l-1 pl-6">
@@ -138,7 +140,9 @@
 						Build Homes
 					</div>
 				</div>
-				<div class="bg-driveway aspect-[424/250] h-auto w-full"></div>
+				<div
+					class="bg-driveway rounded-[2px aspect-[424/250] h-auto w-full">
+				</div>
 			</div>
 			<div
 				class="border-l-driveway flex flex-1/3 flex-col gap-6 border-l-1 pl-6">
@@ -152,7 +156,9 @@
 						Sell Homes
 					</div>
 				</div>
-				<div class="bg-driveway aspect-[424/250] h-auto w-full"></div>
+				<div
+					class="bg-driveway aspect-[424/250] h-auto w-full rounded-[2px]">
+				</div>
 			</div>
 		</div>
 		<div class="h-[200px]"></div>
@@ -161,7 +167,7 @@
 	<div class="bg-cumulus">
 		<div class="mx-auto flex max-w-[1440px] px-6">
 			<div
-				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3">
+				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
 			</div>
 			<div
 				class="border-l-driveway flex flex-1/3 flex-col border-l-1 pl-6 text-[24px] leading-[24px]">
@@ -236,7 +242,7 @@
 	<div class="bg-cumulus">
 		<div class="mx-auto flex max-w-[1440px] px-6">
 			<div
-				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3">
+				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
 			</div>
 			<div
 				class="border-l-driveway flex flex-1/3 flex-col border-l-1 pl-6 text-[24px] leading-[24px]">

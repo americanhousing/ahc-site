@@ -152,7 +152,7 @@
 			class="absolute top-0 left-0 transition-all duration-1000"
 			style={styleForImageContainers[index]}>
 			<img
-				class="bg-driveway object-cover transition-all duration-1000"
+				class="bg-driveway rounded-[2px] object-cover transition-all duration-1000"
 				src={""}
 				width="100%"
 				height="100%"
@@ -160,4 +160,22 @@
 				style={styleForImages[index]} />
 		</div>
 	{/each}
+	<div
+		class="bg-cumulus/60 absolute bottom-6 left-1/2 z-100 flex -translate-x-1/2 items-center justify-center rounded-[2px] backdrop-blur-lg">
+		<button class="px-6 py-5 pr-2">
+			<img
+				class="-scale-x-100"
+				src="/icons/arrow-right-driveway.svg"
+				width="12"
+				height="10"
+				alt="←" />
+		</button>
+		<button class="px-6 py-5 pl-2">
+			<img
+				src="/icons/arrow-right-driveway.svg"
+				width="12"
+				height="10"
+				alt="→" />
+		</button>
+	</div>
 </div>
