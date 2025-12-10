@@ -48,13 +48,22 @@
 	onMount(() => {
 		didResizeWindow();
 
-		if (document.fonts !== undefined) {
-			document.fonts.ready.then(() => {
+		function measureWhenReady() {
+			if (measureContainer === undefined) {
+				requestAnimationFrame(measureWhenReady);
+				return;
+			}
+
+			if (document.fonts !== undefined) {
+				document.fonts.ready.then(() => {
+					didMeasureItems();
+				});
+			} else {
 				didMeasureItems();
-			});
-		} else {
-			didMeasureItems();
+			}
 		}
+
+		requestAnimationFrame(measureWhenReady);
 	});
 </script>
 
