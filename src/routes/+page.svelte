@@ -1,85 +1,86 @@
-<svelte:head>
-	<script
-		id="luma-checkout"
-		src="https://embed.lu.ma/checkout-button.js"></script>
-</svelte:head>
+<script lang="ts">
+	import { Carousel } from "$lib";
+</script>
 
-<div
-	class="mx-auto box-border flex min-h-screen max-w-[1440px] gap-6 px-4 md:px-6">
-	<div class="flex flex-1/3 flex-col pt-6 md:min-w-96">
-		<img
-			src="./images/logo-color.svg"
-			width="101"
-			height="51"
-			alt="The American Housing Corporation" />
-		<div class="h-6 md:h-8"></div>
-
-		<h1 class="font-die-d text-[48px] font-medium md:text-[64px]">
-			Open House
+<div class="bg-driveway">
+	<div class="mx-auto flex max-w-[1440px] items-end p-6">
+		<h1
+			class="font-die-d text-cumulus text-[64px] leading-[64px] font-medium">
+			Saving the<br />
+			American Dream
 		</h1>
-
-		<div class="hidden min-h-2 flex-1 md:block"></div>
-		<img
-			class="bg-driveway/30 mb-4 aspect-[360/285] h-auto w-full rounded-[2px] object-cover md:hidden"
-			src="./images/hero-open-house.jpeg"
-			width="1696"
-			height="1696"
-			alt="Open House" />
-
-		<div
-			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
-			<div class="text-driveway/60 font-medium">
-				American Housing Launch Event
-			</div>
-			<div class="text-driveway font-medium">
-				The American Housing Corporation is excited to invite you to an
-				exclusive preview of our first house prototype and the upcoming
-				product lineup in our Austin, TX factory.
-			</div>
-		</div>
-
-		<div class="bg-driveway my-2 min-h-[0.5px] md:my-4"></div>
-		<div
-			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
-			<div class="text-driveway/60 font-medium">Date & Time</div>
-			<div class="text-driveway font-medium">
-				Wednesday, January 21, 2026<br />
-				4-7pm
-			</div>
-		</div>
-
-		<div class="bg-driveway my-2 min-h-[0.5px] md:my-4"></div>
-		<div
-			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
-			<div class="text-driveway/60 font-medium">Location</div>
-			<div class="text-driveway font-medium">Register to see address</div>
-		</div>
-
-		<div class="bg-driveway my-2 min-h-[0.5px] md:my-4"></div>
-		<div class="min-h-18 md:min-h-16"></div>
-		<div class="sticky bottom-6 h-0">
-			<a
-				class="font-die-a bg-blue hover:bg-blue-dark absolute bottom-full flex cursor-pointer justify-center gap-2 rounded-full px-4 py-3 text-[18px] leading-4 text-white md:self-start"
-				href="https://luma.com/event/evt-Kqb67T3Xqzx4OIh"
-				data-luma-action="checkout"
-				data-luma-event-id="evt-Kqb67T3Xqzx4OIh">
-				RSVP
-				<img
-					src="./icons/arrow-right.svg"
-					width="14"
-					height="8"
-					alt="RSVP" />
-			</a>
-		</div>
 	</div>
-	<div class="hidden flex-2/3 md:block">
-		<div class="sticky top-0 box-border h-screen py-6">
-			<img
-				class="bg-driveway/30 block h-full w-full rounded-[2px] object-cover"
-				src="./images/hero-open-house.jpeg"
-				width="1696"
-				height="1696"
-				alt="Open House" />
+</div>
+
+<div class="bg-cumulus mx-auto max-w-[1440px]">
+	<div class="h-[24px]"></div>
+	<div class="flex gap-6 px-6">
+		<h2
+			class="font-die-d text-driveway flex-1/2 text-[64px] leading-[64px] font-medium">
+			Through All-Out<br />
+			Housing Production
+		</h2>
+		<div class="bg-driveway aspect-[684/552] flex-1/2 rounded-[2px]"></div>
+	</div>
+</div>
+
+<div class="bg-cumulus mx-auto max-w-[1440px]">
+	<div class="px-6">
+		<div class="h-[200px]"></div>
+		<div class="flex gap-6">
+			<div class="border-l-driveway flex-1/3 border-l-1 pl-6">
+				<div
+					class="text-driveway font-die-a text-[24px] leading-[24px] font-medium">
+					We’re building an abundance of beautiful starter homes
+					across the United States, in cities where families love to
+					live.
+				</div>
+				<div class="h-[64px]"></div>
+				<a
+					class="text-blue font-die-a flex items-center gap-2 text-[18px] leading-[24px] font-normal"
+					href="/mission">
+					Our Mission
+					<img
+						src="/icons/arrow-right-blue.svg"
+						width="12"
+						height="10"
+						alt="→" />
+				</a>
+				<div class="h-[64px]"></div>
+			</div>
+			<div class="flex-2/3"></div>
+		</div>
+		<div class="h-[200px]"></div>
+	</div>
+</div>
+
+<div class="bg-cumulus">
+	<div class="mx-auto max-w-[1440px] px-6">
+		<h3 class="font-die-a text-[24px] leading-[24px] font-medium">
+			Design
+		</h3>
+	</div>
+	<div class="h-[40px]"></div>
+	<Carousel
+		images={[
+			"https://picsum.photos/1440/1000",
+			"https://picsum.photos/1440/1200",
+			"https://picsum.photos/1440/1300"
+		]}
+		marginSize={0.1}
+		gap={24} />
+</div>
+
+<div class="bg-cumulus">
+	<div class="h-[200px]"></div>
+	<div class="mx-auto flex max-w-[1440px] gap-6 px-6">
+		<h4 class="font-die-d flex-2/3 text-[64px] leading-[64px] font-medium">
+			We’re a Vertically Integrated Company
+		</h4>
+		<div
+			class="border-l-driveway h-[260px] flex-1/3 border-l-1 pl-6 text-[24px] leading-[24px]">
+			We control our fate by owning every step of the real estate
+			development process.
 		</div>
 	</div>
 </div>
