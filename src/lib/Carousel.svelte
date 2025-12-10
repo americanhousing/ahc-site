@@ -143,8 +143,19 @@
 
 <svelte:window onresize={didResizeViewport} onkeyup={didPressKey} />
 
+<div class="flex flex-col gap-4 px-4 md:hidden">
+	{#each images as image, index}
+		<img
+			class="bg-driveway h-auto w-full rounded-[2px] object-cover"
+			src={""}
+			width="358"
+			height="213"
+			alt="" />
+	{/each}
+</div>
+
 <div
-	class="relative w-screen overflow-hidden"
+	class="relative hidden w-screen overflow-hidden md:block"
 	style={styleForContainer}
 	bind:this={container}>
 	{#each images as image, index}
