@@ -1,4 +1,21 @@
 <svelte:head>
+	<title>Open House - The American Housing Corporation</title>
+	<meta
+		name="description"
+		content="Join us for an exclusive preview of our first house prototype and the upcoming product line up in our Austin, TX factory." />
+	<meta property="og:title" content="Open House - The American Housing Corporation" />
+	<meta
+		property="og:description"
+		content="Join us for an exclusive preview of our first house prototype and the upcoming product line up in our Austin, TX factory." />
+	<meta property="og:image" content="https://americanhousing.co/open-house/images/hero-open-house.jpeg" />
+	<meta property="og:url" content="https://americanhousing.co/open-house/" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Open House - The American Housing Corporation" />
+	<meta
+		name="twitter:description"
+		content="Join us for an exclusive preview of our first house prototype and the upcoming product line up in our Austin, TX factory." />
+	<meta name="twitter:image" content="https://americanhousing.co/open-house/images/hero-open-house.jpeg" />
 	<script
 		id="luma-checkout"
 		src="https://embed.lu.ma/checkout-button.js"></script>
