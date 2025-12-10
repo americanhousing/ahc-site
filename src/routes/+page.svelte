@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { Accordion, Carousel, Logo } from "$lib";
+	import { Accordion, Carousel, Logo, Marquee } from "$lib";
 </script>
 
 <div class="fixed top-0 w-screen">
-	<div class="bg-cumulus/20 h-[50px] px-4 backdrop-blur-lg"></div>
+	<div class="bg-cumulus/20 backdrop-blur-lg">
+		<Marquee items={["$6b raised in series A"]} />
+	</div>
 	<div class="relative mx-auto w-full max-w-[1440px]">
 		<Logo />
 		<div class="absolute top-6 right-6 flex h-[50px] items-center">
@@ -76,7 +78,8 @@
 	</div>
 	<div class="bg-cumulus">
 		<div class="mx-auto max-w-[1440px] px-6">
-			<h3 class="font-die-a text-[24px] leading-[24px] font-medium">
+			<h3
+				class="font-die-a text-driveway text-[24px] leading-[24px] font-medium">
 				Design
 			</h3>
 		</div>
@@ -95,7 +98,7 @@
 		<div class="h-[200px]"></div>
 		<div class="mx-auto flex max-w-[1440px] px-6">
 			<h4
-				class="font-die-d mr-12 flex-2/3 text-[64px] leading-[64px] font-medium">
+				class="font-die-d text-driveway mr-12 flex-2/3 text-[64px] leading-[64px] font-medium">
 				We’re a Vertically Integrated Company
 			</h4>
 			<div
@@ -117,7 +120,7 @@
 						1
 					</div>
 					<div
-						class="font-die-d text-[64px] leading-[64px] font-medium">
+						class="font-die-d text-driveway text-[64px] leading-[64px] font-medium">
 						Buy Land
 					</div>
 				</div>
@@ -131,7 +134,7 @@
 						2
 					</div>
 					<div
-						class="font-die-d text-[64px] leading-[64px] font-medium">
+						class="font-die-d text-driveway text-[64px] leading-[64px] font-medium">
 						Build Homes
 					</div>
 				</div>
@@ -145,7 +148,7 @@
 						3
 					</div>
 					<div
-						class="font-die-d text-[64px] leading-[64px] font-medium">
+						class="font-die-d text-driveway text-[64px] leading-[64px] font-medium">
 						Sell Homes
 					</div>
 				</div>
@@ -162,7 +165,8 @@
 			</div>
 			<div
 				class="border-l-driveway flex flex-1/3 flex-col border-l-1 pl-6 text-[24px] leading-[24px]">
-				<h4 class="font-die-d text-[64px] leading-[64px] font-medium">
+				<h4
+					class="font-die-d text-driveway text-[64px] leading-[64px] font-medium">
 					End-To-End Tech
 				</h4>
 				<div class="flex-1"></div>
@@ -197,7 +201,8 @@
 	<div class="bg-cumulus">
 		<div class="mx-auto max-w-[1440px] px-6">
 			<div class="border-y-driveway flex gap-12 border-y-1 py-6">
-				<h3 class="font-die-a text-[24px] leading-[24px] font-medium">
+				<h3
+					class="font-die-a text-driveway text-[24px] leading-[24px] font-medium">
 					As Featured In
 				</h3>
 				<div class="flex-1"></div>
@@ -208,6 +213,42 @@
 				<div class="bg-driveway h-[24px] w-32"></div>
 			</div>
 			<div class="h-[200px]"></div>
+		</div>
+	</div>
+
+	<div class="bg-cumulus">
+		<div class="mx-auto max-w-[1440px] px-6">
+			<h3
+				class="font-die-a text-driveway text-[24px] leading-[24px] font-medium">
+				Timeline
+			</h3>
+		</div>
+		<div class="h-6"></div>
+		<div class="flex flex-nowrap gap-6 overflow-scroll">
+			<div
+				class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
+				<div
+					class="bg-cumulus/20 absolute bottom-6 left-6 flex gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
+					<span class="text-cumulus">2025</span>
+					Company founded in Austin, Texas.
+				</div>
+			</div>
+			<div
+				class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
+				<div
+					class="bg-cumulus/20 absolute bottom-6 left-6 flex gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
+					<span class="text-cumulus">2025</span>
+					Company founded in Austin, Texas.
+				</div>
+			</div>
+			<div
+				class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
+				<div
+					class="bg-cumulus/20 absolute bottom-6 left-6 flex gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
+					<span class="text-cumulus">2025</span>
+					Company founded in Austin, Texas.
+				</div>
+			</div>
 		</div>
 	</div>
 </main>

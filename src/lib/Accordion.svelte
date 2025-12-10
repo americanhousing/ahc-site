@@ -48,7 +48,7 @@
 			{#if isActive === true}
 				<div>
 					<div class="h-[40px]"></div>
-					<div class="font-normal">
+					<div class="text-driveway font-normal">
 						{item.text}
 					</div>
 				</div>
