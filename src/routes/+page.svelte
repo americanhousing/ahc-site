@@ -49,11 +49,11 @@
 	</div>
 
 	<div class="bg-cumulus mx-auto max-w-[1440px]">
-		<div class="px-6 md:px-6">
+		<div class="px-4 md:px-6">
 			<div class="h-6 md:h-[200px]"></div>
 			<div class="flex flex-col gap-4 md:flex-row md:gap-6">
 				<div
-					class="border-l-driveway md:flex-1/3 md:border-l-1 md:pl-6">
+					class="md:flex-1/3 md:border-l-1 md:border-l-driveway md:pl-6">
 					<div
 						class="text-driveway font-die-a text-[18px] leading-[21px] font-medium md:text-[24px] md:leading-[24px]">
 						We’re building an abundance of beautiful starter homes
@@ -105,7 +105,7 @@
 				We’re a Vertically Integrated Company
 			</h4>
 			<div
-				class="border-l-driveway h-[260px] flex-1/3 text-[18px] leading-[21px] font-medium md:border-l-1 md:pl-6 md:text-[24px] md:leading-[24px] md:font-normal">
+				class="h-[260px] flex-1/3 text-[18px] leading-[21px] font-medium md:border-l-1 md:border-l-driveway md:pl-6 md:text-[24px] md:leading-[24px] md:font-normal">
 				We control our fate by owning every step of the real estate
 				development process.
 			</div>
@@ -117,7 +117,7 @@
 		<div
 			class="mx-auto flex max-w-[1440px] flex-col gap-6 px-4 md:flex-row md:gap-0 md:px-6">
 			<div
-				class="border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:mr-6 md:border-l-1 md:pt-0 md:pl-6">
+				class="flex flex-1/3 flex-col gap-6 border-t-1 border-t-driveway pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:border-l-driveway md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
 						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[18px] md:min-h-[48px] md:min-w-[48px] md:text-[24px] md:leading-[24px]">
@@ -129,11 +129,11 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway rounded-[2px aspect-[424/250] h-auto w-full">
+					class="bg-driveway aspect-[424/250] h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 			<div
-				class="border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:mr-6 md:border-l-1 md:pt-0 md:pl-6">
+				class="flex flex-1/3 flex-col gap-6 border-t-1 border-t-driveway pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:border-l-driveway md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
 						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[18px] md:min-h-[48px] md:min-w-[48px] md:text-[24px] md:leading-[24px]">
@@ -145,11 +145,11 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway rounded-[2px aspect-[424/250] h-auto w-full">
+					class="bg-driveway aspect-[424/250] h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 			<div
-				class="border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:border-l-1 md:pt-0 md:pl-6">
+				class="flex flex-1/3 flex-col gap-6 border-t-1 border-t-driveway pt-4 md:border-t-0 md:border-l-1 md:border-l-driveway md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
 						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[18px] md:min-h-[48px] md:min-w-[48px] md:text-[24px] md:leading-[24px]">
@@ -212,10 +212,10 @@
 		<div class="mx-auto max-w-[1440px] px-4 md:px-6">
 			<div class="border-y-driveway flex border-y-1 py-6">
 				<h3
-					class="font-die-a text-driveway/60 md:text-driveway text-[24px] leading-[24px] font-medium">
+					class="font-die-a text-driveway/60 md:text-driveway text-[18px] leading-[18px] font-medium md:text-[24px] md:leading-[24px]">
 					As Featured In
 				</h3>
-				<div class=" flex-1"></div>
+				<div class="flex-1"></div>
 				<div
 					class="flex flex-col gap-6 md:flex-auto md:flex-row md:gap-12">
 					<div class="bg-driveway h-[24px] w-32"></div>
@@ -250,7 +250,7 @@
 		<div
 			class="mx-auto flex max-w-[1440px] flex-col px-4 md:flex-row md:px-6">
 			<h4
-				class="font-die-d text-driveway text-[32px] leading-[36px] font-medium md:hidden md:text-[64px] md:leading-[64px]">
+				class="font-die-d text-driveway text-[36px] leading-[36px] font-medium md:hidden">
 				United We Build
 			</h4>
 			<div class="h-[24px] md:hidden"></div>
@@ -258,14 +258,14 @@
 				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
 			</div>
 			<div
-				class="border-l-driveway flex flex-1/3 flex-col md:border-l-1 md:pl-6">
+				class="flex flex-1/3 flex-col md:border-l-1 md:border-l-driveway md:pl-6">
 				<h4
-					class="font-die-d text-driveway hidden text-[32px] leading-[36px] font-medium md:block md:text-[64px] md:leading-[64px]">
+					class="font-die-d text-driveway hidden text-[64px] leading-[64px] font-medium md:block">
 					United We Build
 				</h4>
 				<div class="h-[24px] md:h-[64px]"></div>
 				<div
-					class="text-driveway text-[18px] leading-[21px] font-medium md:text-[24px] md:leading-[24px]">
+					class="text-driveway text-[18px] leading-[21px] font-medium md:text-[24px] md:leading-[24px] md:font-normal">
 					The American Housing Corporation is a growing team of
 					engineers in Austin, Texas. We’re looking for hard workers
 					to reinvent the most important product in America — the
@@ -300,7 +300,7 @@
 
 	<div class="bg-blue">
 		<div
-			class="text-cumulus font-die-a mx-auto flex h-[800px] max-w-[1440px] flex-col p-6 text-[14px] leading-[20px]">
+			class="text-cumulus font-die-a mx-auto flex h-[800px] max-w-[1440px] flex-col p-4 text-[14px] leading-[20px] md:p-6">
 			<img
 				class="w-full"
 				src="/images/american-housing.svg"
@@ -336,7 +336,7 @@
 					<a href="/research">Research</a>
 				</div>
 				<div
-					class="border-b-cumulus flex hidden w-[250px] border-b-1 pb-0.5 md:block">
+					class="border-b-cumulus hidden w-[250px] border-b-1 pb-0.5 md:flex">
 					<input
 						class="relative -top-[1.5px] flex-1 appearance-none text-inherit outline-none"
 						placeholder="Enter Email"
