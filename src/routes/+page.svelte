@@ -43,7 +43,7 @@
 				Through All-Out<br />
 				Housing Production
 			</h2>
-			<div class="bg-driveway aspect-[684/552] flex-1/2 rounded-[2px]">
+			<div class="bg-driveway/20 aspect-[684/552] flex-1/2 rounded-[2px]">
 			</div>
 		</div>
 	</div>
@@ -53,7 +53,7 @@
 			<div class="h-6 md:h-[200px]"></div>
 			<div class="flex flex-col gap-4 md:flex-row md:gap-6">
 				<div
-					class="md:flex-1/3 md:border-l-1 md:border-l-driveway md:pl-6">
+					class="md:border-l-driveway md:flex-1/3 md:border-l-1 md:pl-6">
 					<div
 						class="text-driveway font-die-a text-[18px] leading-[21px] font-medium md:text-[24px] md:leading-[24px]">
 						We’re building an abundance of beautiful starter homes
@@ -105,7 +105,7 @@
 				We’re a Vertically Integrated Company
 			</h4>
 			<div
-				class="h-[260px] flex-1/3 text-[18px] leading-[21px] font-medium md:border-l-1 md:border-l-driveway md:pl-6 md:text-[24px] md:leading-[24px] md:font-normal">
+				class="md:border-l-driveway h-[260px] flex-1/3 text-[18px] leading-[21px] font-medium md:border-l-1 md:pl-6 md:text-[24px] md:leading-[24px] md:font-normal">
 				We control our fate by owning every step of the real estate
 				development process.
 			</div>
@@ -117,7 +117,7 @@
 		<div
 			class="mx-auto flex max-w-[1440px] flex-col gap-6 px-4 md:flex-row md:gap-0 md:px-6">
 			<div
-				class="flex flex-1/3 flex-col gap-6 border-t-1 border-t-driveway pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:border-l-driveway md:pt-0 md:pl-6">
+				class="border-t-driveway md:border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
 						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[18px] md:min-h-[48px] md:min-w-[48px] md:text-[24px] md:leading-[24px]">
@@ -129,11 +129,11 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway aspect-[424/250] h-auto w-full rounded-[2px]">
+					class="bg-driveway/20 aspect-[424/250] h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 			<div
-				class="flex flex-1/3 flex-col gap-6 border-t-1 border-t-driveway pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:border-l-driveway md:pt-0 md:pl-6">
+				class="border-t-driveway md:border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
 						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[18px] md:min-h-[48px] md:min-w-[48px] md:text-[24px] md:leading-[24px]">
@@ -145,11 +145,11 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway aspect-[424/250] h-auto w-full rounded-[2px]">
+					class="bg-driveway/20 aspect-[424/250] h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 			<div
-				class="flex flex-1/3 flex-col gap-6 border-t-1 border-t-driveway pt-4 md:border-t-0 md:border-l-1 md:border-l-driveway md:pt-0 md:pl-6">
+				class="border-t-driveway md:border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:border-t-0 md:border-l-1 md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
 						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[18px] md:min-h-[48px] md:min-w-[48px] md:text-[24px] md:leading-[24px]">
@@ -161,7 +161,7 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway aspect-[424/250] h-auto w-full rounded-[2px]">
+					class="bg-driveway/20 aspect-[424/250] h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 		</div>
@@ -171,7 +171,7 @@
 	<div class="bg-cumulus hidden md:block">
 		<div class="mx-auto flex max-w-[1440px] px-6">
 			<div
-				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
+				class="bg-driveway/20 mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
 			</div>
 			<div
 				class="border-l-driveway flex flex-1/3 flex-col border-l-1 pl-6 text-[24px] leading-[24px]">
@@ -216,13 +216,12 @@
 					As Featured In
 				</h3>
 				<div class="flex-1"></div>
-				<div
-					class="flex flex-col gap-6 md:flex-auto md:flex-row md:gap-12">
-					<div class="bg-driveway h-[24px] w-32"></div>
-					<div class="bg-driveway h-[24px] w-32"></div>
-					<div class="bg-driveway h-[24px] w-32"></div>
-					<div class="bg-driveway h-[24px] w-32"></div>
-					<div class="bg-driveway h-[24px] w-32"></div>
+				<div class="flex flex-col gap-6 md:flex-row md:gap-12">
+					<div class="bg-driveway/20 h-[24px] w-32"></div>
+					<div class="bg-driveway/20 h-[24px] w-32"></div>
+					<div class="bg-driveway/20 h-[24px] w-32"></div>
+					<div class="bg-driveway/20 h-[24px] w-32"></div>
+					<div class="bg-driveway/20 h-[24px] w-32"></div>
 				</div>
 			</div>
 			<div class="h-[160px] md:h-[200px]"></div>
@@ -255,10 +254,10 @@
 			</h4>
 			<div class="h-[24px] md:hidden"></div>
 			<div
-				class="bg-driveway mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
+				class="bg-driveway/20 mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
 			</div>
 			<div
-				class="flex flex-1/3 flex-col md:border-l-1 md:border-l-driveway md:pl-6">
+				class="md:border-l-driveway flex flex-1/3 flex-col md:border-l-1 md:pl-6">
 				<h4
 					class="font-die-d text-driveway hidden text-[64px] leading-[64px] font-medium md:block">
 					United We Build
@@ -300,12 +299,19 @@
 
 	<div class="bg-blue">
 		<div
-			class="text-cumulus font-die-a mx-auto flex h-[800px] max-w-[1440px] flex-col p-4 text-[14px] leading-[20px] md:p-6">
+			class="text-cumulus font-die-a mx-auto flex h-[890px] max-w-[1440px] flex-col p-6 text-[14px] leading-[20px] md:h-[800px]">
+			<div class="h-[80px] md:hidden"></div>
 			<img
-				class="w-full"
+				class="hidden w-full md:block"
 				src="/images/american-housing.svg"
 				width="1385"
 				height="180"
+				alt="American Housing" />
+			<img
+				class="w-full md:hidden"
+				src="/images/american-housing-alt.svg"
+				width="355"
+				height="172"
 				alt="American Housing" />
 			<div class="flex-1"></div>
 			<div

@@ -173,7 +173,7 @@
 	{/each}
 	<div
 		class="bg-cumulus/60 absolute bottom-6 left-1/2 z-100 flex -translate-x-1/2 items-center justify-center rounded-[2px] backdrop-blur-lg">
-		<button class="px-6 py-5 pr-2">
+		<button class="cursor-pointer px-6 py-5 pr-2">
 			<img
 				class="-scale-x-100"
 				src="/icons/arrow-right-driveway.svg"
@@ -181,7 +181,7 @@
 				height="10"
 				alt="←" />
 		</button>
-		<button class="px-6 py-5 pl-2">
+		<button class="cursor-pointer px-6 py-5 pl-2">
 			<img
 				src="/icons/arrow-right-driveway.svg"
 				width="12"
