@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick } from "svelte";
+	import { onMount } from "svelte";
 
 	type Props = {
 		items: string[];
@@ -45,19 +45,23 @@
 		}
 	}
 
-	onMount(async () => {
+	onMount(() => {
 		didResizeWindow();
-		await tick();
-		didMeasureItems();
+
+		if (document.fonts !== undefined) {
+			document.fonts.ready.then(() => {
+				didMeasureItems();
+			});
+		} else {
+			didMeasureItems();
+		}
 	});
 </script>
 
 <svelte:window onresize={didResizeWindow} />
 
-<div
-	class="pointer-events-none invisible absolute"
-	bind:this={measureContainer}>
-	<div class="flex gap-6">
+<div class="pointer-events-none invisible absolute">
+	<div class="flex gap-6" bind:this={measureContainer}>
 		{#each items as item}
 			<span class="whitespace-nowrap">{item}</span>
 		{/each}
