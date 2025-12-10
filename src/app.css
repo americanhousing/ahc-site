@@ -43,3 +43,11 @@
 	--font-die-a: "die-a", sans-serif;
 	--font-die-d: "die-d", sans-serif;
 }
+
+.scrollbar-none {
+	scrollbar-width: 0;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+	display: none;
+}

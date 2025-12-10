@@ -40,7 +40,7 @@
 
 <div
 	bind:this={scroller}
-	class="flex flex-nowrap gap-6 overflow-x-auto"
+	class="scrollbar-none flex flex-nowrap gap-6 overflow-x-auto"
 	style="padding-left: {horizontalPadding}px; padding-right: {horizontalPadding}px;">
 	{#each items as item}
 		<div

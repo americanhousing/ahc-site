@@ -37,9 +37,11 @@
 		didMeasureItems();
 	}
 
+	const GAP_PX = 24;
+
 	function didMeasureItems() {
 		if (measureContainer !== undefined) {
-			itemsWidth = measureContainer.scrollWidth;
+			itemsWidth = measureContainer.scrollWidth + GAP_PX;
 		}
 	}
 

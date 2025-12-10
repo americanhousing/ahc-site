@@ -2,7 +2,7 @@
 	import { Accordion, Carousel, Logo, Marquee, Timeline } from "$lib";
 </script>
 
-<div class="fixed top-0 w-screen">
+<div class="fixed top-0 z-10 w-screen">
 	<div class="bg-cumulus/20 backdrop-blur-lg">
 		<Marquee items={["$6b raised in series A"]} />
 	</div>
@@ -288,7 +288,7 @@
 				height="180"
 				alt="American Housing" />
 			<div class="flex-1"></div>
-			<div class="flex">
+			<div class="flex gap-12">
 				<div class="flex items-center gap-6">
 					<img
 						src="/icons/social-linkedin.svg"
@@ -313,6 +313,16 @@
 					<a href="/mission">Mission</a>
 					<a href="/faq">FAQs</a>
 					<a href="/research">Research</a>
+				</div>
+				<div class="border-b-cumulus flex w-[250px] border-b-1 pb-0.5">
+					<input
+						class="relative -top-[1.5px] flex-1 appearance-none text-inherit outline-none"
+						placeholder="Enter Email"
+						type="text" />
+					<input
+						class="relative -top-[1px] appearance-none"
+						type="submit"
+						value="Sign up" />
 				</div>
 			</div>
 			<div class="h-[64px]"></div>
