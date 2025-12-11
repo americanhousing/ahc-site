@@ -15,6 +15,7 @@
 
 	let scroller = $state<HTMLElement | undefined>(undefined);
 	let horizontalPadding = $state<number>(0);
+	let currentIndex = $state<number>(0);
 
 	function calculatePadding() {
 		const maxWidth = 1392;
@@ -27,6 +28,59 @@
 		}
 	}
 
+	function scrollToItem(index: number) {
+		if (scroller === undefined) {
+			return;
+		}
+
+		const itemElements = scroller.children;
+
+		if (index < 0 || index >= itemElements.length) {
+			return;
+		}
+
+		const item = itemElements[index] as HTMLElement;
+		const itemWidth = item.offsetWidth;
+		const viewportWidth = window.innerWidth;
+		const itemCenter = item.offsetLeft + itemWidth / 2;
+		const targetScrollLeft = itemCenter - viewportWidth / 2;
+
+		scroller.scrollTo({
+			left: targetScrollLeft,
+			behavior: "smooth"
+		});
+
+		currentIndex = index;
+	}
+
+	function didClickItem(index: number) {
+		scrollToItem(index);
+	}
+
+	function didPressKey(event: KeyboardEvent) {
+		if (scroller === undefined) {
+			return;
+		}
+
+		const scrollerRect = scroller.getBoundingClientRect();
+		const isScrollerVisible =
+			scrollerRect.top < window.innerHeight && scrollerRect.bottom > 0;
+
+		if (isScrollerVisible === false) {
+			return;
+		}
+
+		if (event.key === "ArrowLeft") {
+			event.preventDefault();
+			scrollToItem(Math.max(0, currentIndex - 1));
+		}
+
+		if (event.key === "ArrowRight") {
+			event.preventDefault();
+			scrollToItem(Math.min(items.length - 1, currentIndex + 1));
+		}
+	}
+
 	function didResizeWindow() {
 		calculatePadding();
 	}
@@ -36,15 +90,17 @@
 	});
 </script>
 
-<svelte:window onresize={didResizeWindow} />
+<svelte:window onresize={didResizeWindow} onkeydown={didPressKey} />
 
 <div
 	bind:this={scroller}
 	class="scrollbar-none hidden flex-nowrap gap-6 overflow-x-auto md:flex"
 	style="padding-left: {horizontalPadding}px; padding-right: {horizontalPadding}px;">
-	{#each items as item}
-		<div
-			class="bg-driveway/20 relative h-[664px] min-w-[1116px] rounded-[2px]">
+	{#each items as item, index}
+		<button
+			type="button"
+			onclick={() => didClickItem(index)}
+			class="bg-driveway/20 relative h-[664px] min-w-[1116px] cursor-pointer rounded-[2px]">
 			{#if item.image !== undefined}
 				<img
 					src={item.image}
@@ -56,6 +112,6 @@
 				<span class="text-cumulus">{item.year}</span>
 				<span class="text-driveway">{item.text}</span>
 			</div>
-		</div>
+		</button>
 	{/each}
 </div>
