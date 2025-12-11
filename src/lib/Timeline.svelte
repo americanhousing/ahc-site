@@ -52,9 +52,9 @@
 					class="h-full w-full rounded-[2px] object-cover" />
 			{/if}
 			<div
-				class="bg-cumulus/20 absolute bottom-6 left-6 flex w-auto gap-2 rounded-[2px] px-6 py-4 backdrop-blur-lg">
+				class="bg-cumulus/20 absolute bottom-6 left-6 flex w-auto gap-2 rounded-[2px] px-6 py-4 font-medium backdrop-blur-lg">
 				<span class="text-cumulus">{item.year}</span>
-				<span class="text-cumulus">{item.text}</span>
+				<span class="text-driveway">{item.text}</span>
 			</div>
 		</div>
 	{/each}

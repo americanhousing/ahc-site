@@ -1,15 +1,49 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+
+	let thresholdElement = $state<HTMLElement | undefined>();
+	let shouldElevateAmericanHousing = $state<boolean>(false);
+	let isRevealed = $state<boolean>(false);
+
+	function updateElevationState() {
+		if (thresholdElement === undefined) {
+			return;
+		}
+
+		const rect = thresholdElement.getBoundingClientRect();
+
+		shouldElevateAmericanHousing =
+			isRevealed === true || rect.top < window.innerHeight * 0.8;
+
+		isRevealed = isRevealed || shouldElevateAmericanHousing;
+	}
+
+	function didChangeViewport() {
+		updateElevationState();
+	}
+
+	onMount(() => {
+		updateElevationState();
+	});
+</script>
+
+<svelte:window onscroll={didChangeViewport} onresize={didChangeViewport} />
+
 <div class="bg-blue">
 	<div
-		class="text-cumulus font-die-a mx-auto flex h-[890px] max-w-[1440px] flex-col p-6 text-[14px] leading-[20px] md:h-[800px]">
+		class="text-cumulus font-die-a mx-auto flex h-[890px] max-w-[1440px] flex-col p-6 text-[14px] leading-[20px] md:h-[800px]"
+		bind:this={thresholdElement}>
 		<div class="h-[80px] md:hidden"></div>
 		<img
-			class="hidden w-full md:block"
+			class="hidden w-full translate-y-1/3 opacity-0 transition-all duration-1500 ease-out md:block"
+			class:translate-none={shouldElevateAmericanHousing}
+			class:opacity-100={shouldElevateAmericanHousing}
 			src="/images/american-housing.svg"
 			width="1385"
 			height="180"
 			alt="American Housing" />
 		<img
-			class="w-full md:hidden"
+			class="w-full translate-y-1/3 opacity-0 transition-all duration-1500 ease-out md:hidden"
 			src="/images/american-housing-alt.svg"
 			width="355"
 			height="172"
@@ -23,11 +57,7 @@
 					width="18"
 					height="18"
 					alt="Linkedin" />
-				<img
-					src="/icons/social-x.svg"
-					width="20"
-					height="18"
-					alt="X" />
+				<img src="/icons/social-x.svg" width="20" height="18" alt="X" />
 				<img
 					src="/icons/social-instagram.svg"
 					width="18"

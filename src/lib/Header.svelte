@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import Logo from "./Logo.svelte";
+	import Rollover from "./Rollover.svelte";
 
 	let isOnLightBackground = $state(false);
 	let headerElement: HTMLDivElement;
@@ -11,11 +12,12 @@
 		}
 
 		const headerRect = headerElement.getBoundingClientRect();
-		const headerCenter = headerRect.top + headerRect.height / 2;
+		const headerCenter = headerRect.top + headerRect.height / 2 + 100.0;
 		const sections = document.querySelectorAll("main > div[class*='bg-']");
 
 		for (const section of sections) {
 			const sectionRect = section.getBoundingClientRect();
+
 			const isOverlapping =
 				headerCenter >= sectionRect.top &&
 				headerCenter <= sectionRect.bottom;
@@ -25,6 +27,7 @@
 			}
 
 			isOnLightBackground = section.classList.contains("bg-cumulus");
+
 			return;
 		}
 	}
@@ -48,12 +51,12 @@
 			class="absolute top-4 right-4 flex h-[50px] items-center md:top-6 md:right-6">
 			<a
 				href="/careers"
-				class="flex gap-2 rounded-full px-4 py-2 text-[18px] leading-[24px] transition-all duration-150"
+				class="group flex gap-2 rounded-full px-4 py-2 text-[18px] leading-[24px] transition-all duration-150"
 				class:bg-cumulus={isOnLightBackground === false}
 				class:text-driveway={isOnLightBackground === false}
 				class:bg-driveway={isOnLightBackground === true}
 				class:text-cumulus={isOnLightBackground === true}>
-				Careers
+				<Rollover text="Careers" />
 				<img
 					class:hidden={isOnLightBackground === true}
 					src="/icons/arrow-right-driveway.svg"

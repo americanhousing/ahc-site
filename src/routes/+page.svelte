@@ -1,17 +1,12 @@
 <script lang="ts">
 	import { Accordion, Carousel, Footer, Header, Timeline } from "$lib";
 	import Marquee from "$lib/Marquee.svelte";
+	import Rollover from "$lib/Rollover.svelte";
 	import { onMount } from "svelte";
 
-	let headingAlpha = $state<HTMLElement | undefined>();
-	let headingBeta = $state<HTMLElement | undefined>();
 	let shouldDisplayShiftedStage = $state<boolean>(false);
 
 	function updateHeadingAnimation() {
-		if (headingAlpha === undefined || headingBeta === undefined) {
-			return;
-		}
-
 		shouldDisplayShiftedStage = window.scrollY > window.innerHeight * 0.6;
 	}
 
@@ -37,8 +32,7 @@
 			<h1
 				class="font-die-d text-cumulus text-[36px] leading-[36px] font-medium transition-all duration-150 ease-in will-change-transform md:text-[64px] md:leading-[64px]"
 				class:translate-y-44={shouldDisplayShiftedStage}
-				class:text-driveway={shouldDisplayShiftedStage}
-				bind:this={headingAlpha}>
+				class:text-driveway={shouldDisplayShiftedStage}>
 				Saving the<br />
 				American Dream
 			</h1>
@@ -50,8 +44,7 @@
 		<div class="flex flex-col gap-4 px-4 md:flex-row md:gap-6 md:px-6">
 			<h2
 				class="font-die-d text-driveway flex-1/2 text-[36px] leading-[36px] font-medium transition-all duration-150 ease-in will-change-transform md:text-[64px] md:leading-[64px]"
-				class:translate-y-38={shouldDisplayShiftedStage}
-				bind:this={headingBeta}>
+				class:translate-y-38={shouldDisplayShiftedStage}>
 				Through All-Out<br />
 				Housing Production
 			</h2>
@@ -74,9 +67,9 @@
 					</div>
 					<div class="h-[48px] md:h-[64px]"></div>
 					<a
-						class="text-blue font-die-a flex items-center gap-2 text-[18px] leading-[24px] font-normal"
+						class="text-blue font-die-a group flex items-center gap-2 text-[18px] leading-[24px] font-normal"
 						href="/mission">
-						Our Mission
+						<Rollover text="Our Mission" />
 						<img
 							src="/icons/arrow-right-blue.svg"
 							width="12"
@@ -286,10 +279,10 @@
 				<div class="h-[64px]"></div>
 				<a
 					href="/careers"
-					class="font-die-a bg-blue inline-flex cursor-pointer gap-2 self-start rounded-full px-4 py-3 text-[18px] leading-4 text-white">
-					Join Us
+					class="group font-die-a bg-blue inline-flex cursor-pointer gap-2 self-start rounded-full px-4 py-3 text-[18px] leading-4 text-white">
+					<Rollover text="Join Us" />
 					<img
-						src="./icons/arrow-right-white.svg"
+						src="./icons/arrow-right-cumulus.svg"
 						width="14"
 						height="8"
 						alt="→" />

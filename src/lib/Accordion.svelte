@@ -22,13 +22,13 @@
 	{#each items as item, index}
 		{@const isActive = index === indexForActiveItem}
 
-		<div class="border-b-driveway border-b-1 pb-6">
+		<div class="border-b-driveway group border-b-1 pb-6">
 			<button
 				class="flex w-full cursor-pointer items-center gap-2 text-left"
 				onclick={() => didClickItem(index)}>
 				<div class="relative h-[16px] w-[16px]">
 					<img
-						class="absolute top-0 left-0"
+						class="absolute top-0 left-0 group-hover:opacity-100"
 						class:opacity-0={isActive === false}
 						src="/icons/bullet-active-blue.svg"
 						width="16"
