@@ -160,7 +160,7 @@
 	bind:this={container}>
 	{#each images as image, index}
 		<div
-			class="absolute top-0 left-0 transition-all duration-1000"
+			class="absolute top-0 left-0"
 			style={styleForImageContainers[index]}>
 			<img
 				class="bg-driveway/20 rounded-[2px] object-cover transition-all duration-1000"

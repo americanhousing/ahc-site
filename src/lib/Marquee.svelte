@@ -77,11 +77,12 @@
 	</div>
 </div>
 
-<div class="h-[50px] overflow-hidden" style={containerStyle}>
+<div class="h-[50px] w-screen overflow-hidden" style={containerStyle}>
 	<div class="marquee-track text-driveway flex h-full items-center gap-6">
-		{#each { length: duplicateCount } as _, i}
+		{#each { length: duplicateCount } as _}
 			{#each items as item}
-				<span class="whitespace-nowrap">{item}</span>
+				<span class="pointer-events-none whitespace-nowrap"
+					>{item}</span>
 			{/each}
 		{/each}
 	</div>

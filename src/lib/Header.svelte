@@ -51,7 +51,7 @@
 			class="absolute top-4 right-4 flex h-[50px] items-center md:top-6 md:right-6">
 			<a
 				href="/careers"
-				class="group flex gap-2 rounded-full px-4 py-2 text-[18px] leading-[24px] transition-all duration-150"
+				class="group type-body flex gap-2 rounded-full px-4 py-2 transition-all duration-150"
 				class:bg-cumulus={isOnLightBackground === false}
 				class:text-driveway={isOnLightBackground === false}
 				class:bg-driveway={isOnLightBackground === true}

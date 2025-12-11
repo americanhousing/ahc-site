@@ -31,7 +31,7 @@
 
 <div class="bg-blue">
 	<div
-		class="text-cumulus font-die-a mx-auto flex h-[890px] max-w-[1440px] flex-col p-6 text-[14px] leading-[20px] md:h-[800px]"
+		class="text-cumulus font-die-a type-caption mx-auto flex h-[890px] max-w-[1440px] flex-col p-6 md:h-[800px]"
 		bind:this={thresholdElement}>
 		<div class="h-[80px] md:hidden"></div>
 		<img
@@ -43,7 +43,7 @@
 			height="180"
 			alt="American Housing" />
 		<img
-			class="w-full translate-y-1/3 opacity-0 transition-all duration-1500 ease-out md:hidden"
+			class="w-full md:hidden"
 			src="/images/american-housing-alt.svg"
 			width="355"
 			height="172"
@@ -66,7 +66,7 @@
 			</div>
 			<div class="flex-1"></div>
 			<div
-				class="text-cumulus font-die-a flex flex-col gap-6 text-[14px] leading-[20px] md:flex-row md:gap-12">
+				class="text-cumulus font-die-a type-caption flex flex-col gap-6 md:flex-row md:gap-12">
 				<a href="/contact">Contact</a>
 				<a href="/mission">Mission</a>
 				<a href="/faq">FAQs</a>

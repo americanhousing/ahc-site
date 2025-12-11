@@ -18,7 +18,7 @@
 </script>
 
 <div
-	class="font-die-a flex flex-col gap-6 text-[24px] leading-[24px] font-medium">
+	class="font-die-a type-title flex flex-col gap-6 font-medium">
 	{#each items as item, index}
 		{@const isActive = index === indexForActiveItem}
 

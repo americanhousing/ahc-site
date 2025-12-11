@@ -27,7 +27,7 @@
 			alt="Open House" />
 
 		<div
-			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
+			class="type-title flex flex-col gap-2 md:gap-4">
 			<div class="text-driveway/60 font-medium">
 				American Housing Launch Event
 			</div>
@@ -40,7 +40,7 @@
 
 		<div class="bg-driveway my-2 min-h-[0.5px] md:my-4"></div>
 		<div
-			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
+			class="type-title flex flex-col gap-2 md:gap-4">
 			<div class="text-driveway/60 font-medium">Date & Time</div>
 			<div class="text-driveway font-medium">
 				Wednesday, January 21, 2026<br />
@@ -50,7 +50,7 @@
 
 		<div class="bg-driveway my-2 min-h-[0.5px] md:my-4"></div>
 		<div
-			class="flex flex-col gap-2 text-[18px] leading-[24px] md:gap-4 md:text-[24px]">
+			class="type-title flex flex-col gap-2 md:gap-4">
 			<div class="text-driveway/60 font-medium">Location</div>
 			<div class="text-driveway font-medium">Register to see address</div>
 		</div>
