@@ -1,14 +1,44 @@
 <script lang="ts">
 	import { Accordion, Carousel, Footer, Header, Timeline } from "$lib";
+	import Marquee from "$lib/Marquee.svelte";
+	import { onMount } from "svelte";
+
+	let headingAlpha = $state<HTMLElement | undefined>();
+	let headingBeta = $state<HTMLElement | undefined>();
+	let shouldDisplayShiftedStage = $state<boolean>(false);
+
+	function updateHeadingAnimation() {
+		if (headingAlpha === undefined || headingBeta === undefined) {
+			return;
+		}
+
+		shouldDisplayShiftedStage = window.scrollY > window.innerHeight * 0.6;
+	}
+
+	function didChangeViewport() {
+		updateHeadingAnimation();
+	}
+
+	onMount(() => {
+		updateHeadingAnimation();
+	});
 </script>
+
+<svelte:window onscroll={didChangeViewport} onresize={didChangeViewport} />
 
 <Header />
 
 <main>
-	<div class="bg-driveway">
+	<div class="bg-driveway relative">
+		<div class="bg-cumulus/20 absolute backdrop-blur-lg">
+			<Marquee items={["$6b raised in series A"]} />
+		</div>
 		<div class="mx-auto flex h-svh max-w-[1440px] items-end p-4 md:p-6">
 			<h1
-				class="font-die-d text-cumulus text-[36px] leading-[36px] font-medium md:text-[64px] md:leading-[64px]">
+				class="font-die-d text-cumulus text-[36px] leading-[36px] font-medium transition-all duration-150 ease-in will-change-transform md:text-[64px] md:leading-[64px]"
+				class:translate-y-44={shouldDisplayShiftedStage}
+				class:text-driveway={shouldDisplayShiftedStage}
+				bind:this={headingAlpha}>
 				Saving the<br />
 				American Dream
 			</h1>
@@ -19,7 +49,9 @@
 		<div class="h-[24px]"></div>
 		<div class="flex flex-col gap-4 px-4 md:flex-row md:gap-6 md:px-6">
 			<h2
-				class="font-die-d text-driveway flex-1/2 text-[36px] leading-[36px] font-medium md:text-[64px] md:leading-[64px]">
+				class="font-die-d text-driveway flex-1/2 text-[36px] leading-[36px] font-medium transition-all duration-150 ease-in will-change-transform md:text-[64px] md:leading-[64px]"
+				class:translate-y-38={shouldDisplayShiftedStage}
+				bind:this={headingBeta}>
 				Through All-Out<br />
 				Housing Production
 			</h2>

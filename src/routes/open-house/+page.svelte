@@ -65,7 +65,7 @@
 				data-luma-event-id="evt-Kqb67T3Xqzx4OIh">
 				RSVP
 				<img
-					src="./icons/arrow-right-white.svg"
+					src="./icons/arrow-right-cumulus.svg"
 					width="14"
 					height="8"
 					alt="RSVP" />

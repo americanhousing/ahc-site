@@ -21,9 +21,9 @@
 		const windowWidth = window.innerWidth;
 
 		if (windowWidth > maxWidth) {
-			horizontalPadding = (windowWidth - maxWidth) / 2;
+			horizontalPadding = Math.max((windowWidth - maxWidth) / 2, 24.0);
 		} else {
-			horizontalPadding = 0;
+			horizontalPadding = 24.0;
 		}
 	}
 
@@ -44,7 +44,7 @@
 	style="padding-left: {horizontalPadding}px; padding-right: {horizontalPadding}px;">
 	{#each items as item}
 		<div
-			class="bg-driveway relative h-[664px] min-w-[1116px] rounded-[2px]">
+			class="bg-driveway/20 relative h-[664px] min-w-[1116px] rounded-[2px]">
 			{#if item.image !== undefined}
 				<img
 					src={item.image}

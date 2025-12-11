@@ -146,7 +146,7 @@
 <div class="flex flex-col gap-4 px-4 md:hidden">
 	{#each images as image, index}
 		<img
-			class="bg-driveway h-auto w-full rounded-[2px] object-cover"
+			class="bg-driveway/20 h-auto w-full rounded-[2px] object-cover"
 			src={""}
 			width="358"
 			height="213"
@@ -163,7 +163,7 @@
 			class="absolute top-0 left-0 transition-all duration-1000"
 			style={styleForImageContainers[index]}>
 			<img
-				class="bg-driveway rounded-[2px] object-cover transition-all duration-1000"
+				class="bg-driveway/20 rounded-[2px] object-cover transition-all duration-1000"
 				src={""}
 				width="100%"
 				height="100%"
