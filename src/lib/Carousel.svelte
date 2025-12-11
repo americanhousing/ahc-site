@@ -24,6 +24,7 @@
 	let isSliding = $state<boolean>(false);
 	let transitionsEnabled = $state<boolean>(true);
 	let slideTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
+	let resizeTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
 
 	let baseImageDimensions = $derived.by(() => {
 		const scaledWidth = (windowSize.width * 1116) / 1440;
@@ -105,6 +106,20 @@
 	}
 
 	function didResizeViewport() {
+		if (isSliding === false) {
+			transitionsEnabled = false;
+		}
+
+		if (resizeTimeout !== undefined) {
+			clearTimeout(resizeTimeout);
+		}
+
+		resizeTimeout = window.setTimeout(() => {
+			if (isSliding === false) {
+				transitionsEnabled = true;
+			}
+		}, 150);
+
 		windowSize = {
 			width: window.innerWidth,
 			height: window.innerHeight
@@ -190,6 +205,10 @@
 	onDestroy(() => {
 		if (slideTimeout !== undefined) {
 			clearTimeout(slideTimeout);
+		}
+
+		if (resizeTimeout !== undefined) {
+			clearTimeout(resizeTimeout);
 		}
 	});
 </script>
