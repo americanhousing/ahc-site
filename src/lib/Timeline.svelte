@@ -16,6 +16,15 @@
 	let scroller = $state<HTMLElement | undefined>(undefined);
 	let horizontalPadding = $state<number>(0);
 	let currentIndex = $state<number>(0);
+	let windowWidth = $state<number>(typeof window !== "undefined" ? window.innerWidth : 1440);
+
+	let itemDimensions = $derived.by(() => {
+		const scaledWidth = (windowWidth * 1116) / 1440;
+		const width = Math.min(1116, scaledWidth);
+		const height = (width * 664) / 1116;
+
+		return { width, height };
+	});
 
 	function calculatePadding() {
 		const maxWidth = 1392;
@@ -82,6 +91,7 @@
 	}
 
 	function didResizeWindow() {
+		windowWidth = window.innerWidth;
 		calculatePadding();
 	}
 
@@ -100,7 +110,8 @@
 		<button
 			type="button"
 			onclick={() => didClickItem(index)}
-			class="bg-driveway/20 relative h-[664px] min-w-[1116px] cursor-pointer rounded-[2px]">
+			class="bg-driveway/20 relative cursor-pointer rounded-[2px]"
+			style="width: {itemDimensions.width}px; height: {itemDimensions.height}px; min-width: {itemDimensions.width}px;">
 			{#if item.image !== undefined}
 				<img
 					src={item.image}

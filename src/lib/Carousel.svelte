@@ -136,6 +136,7 @@
 
 	function didClickItem(offset: number) {
 		if (offset === 0) {
+			startSlide(1);
 			return;
 		}
 
@@ -246,10 +247,11 @@
 					style={stylesForSlots[slotIndex]?.image} />
 			</button>
 		{:else}
-			<div
-				class="absolute top-0 left-0 transition-transform duration-400 ease-out will-change-transform"
+			<button
+				class="absolute top-0 left-0 cursor-pointer border-none bg-transparent p-0 transition-transform duration-400 ease-out will-change-transform"
 				class:transition-none={!transitionsEnabled}
-				style={stylesForSlots[slotIndex]?.container}>
+				style={stylesForSlots[slotIndex]?.container}
+				onclick={() => didClickItem(item.offset)}>
 				<img
 					class="bg-driveway/20 rounded-[2px] object-cover transition-transform duration-400 ease-out"
 					src={""}
@@ -257,7 +259,7 @@
 					height="100%"
 					alt=""
 					style={stylesForSlots[slotIndex]?.image} />
-			</div>
+			</button>
 		{/if}
 	{/each}
 	<div

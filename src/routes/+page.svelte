@@ -47,7 +47,8 @@
 				Through All-Out<br />
 				Housing Production
 			</h2>
-			<div class="bg-driveway/20 aspect-[684/552] flex-1/2 rounded-[2px]">
+			<div
+				class="bg-driveway/20 aspect-[476/552] flex-1/2 rounded-[2px] lg:aspect-[684/552]">
 			</div>
 		</div>
 	</div>
@@ -82,6 +83,7 @@
 			<div class="h-[160px] md:h-[200px]"></div>
 		</div>
 	</div>
+
 	<div class="bg-cumulus">
 		<div class="mx-auto max-w-[1440px] px-4 md:px-6">
 			<h3 class="font-die-a text-driveway type-title font-medium">
@@ -174,7 +176,7 @@
 	<div class="bg-cumulus hidden md:block">
 		<div class="mx-auto flex max-w-[1440px] px-6">
 			<div
-				class="bg-driveway/20 mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
+				class="bg-driveway/20 mr-6 aspect-[560/515] h-auto w-full flex-2/3 rounded-[2px] lg:aspect-[920/644]">
 			</div>
 			<div
 				class="border-l-driveway type-title flex flex-1/3 flex-col border-l-1 pl-6">
@@ -255,7 +257,7 @@
 			</h4>
 			<div class="h-[24px] md:hidden"></div>
 			<div
-				class="bg-driveway/20 mr-6 aspect-[920/644] h-auto w-full flex-2/3 rounded-[2px]">
+				class="bg-driveway/20 mr-6 aspect-[560/644] h-auto w-full flex-2/3 rounded-[2px] lg:aspect-[920/644]">
 			</div>
 			<div
 				class="md:border-l-driveway flex flex-1/3 flex-col md:border-l-1 md:pl-6">
