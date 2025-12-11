@@ -125,7 +125,7 @@
 				class="border-t-driveway md:border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
-						class="text-cumulus bg-driveway font-die-a type-title flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full md:min-h-[48px] md:min-w-[48px]">
+						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[24px] md:min-h-[28px] md:min-w-[28px] lg:min-h-[28px] lg:min-w-[28px] xl:min-h-[48px] xl:min-w-[48px] xl:text-[24px]">
 						1
 					</div>
 					<div
@@ -141,7 +141,7 @@
 				class="border-t-driveway md:border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:mr-6 md:border-t-0 md:border-l-1 md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
-						class="text-cumulus bg-driveway font-die-a type-title flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full md:min-h-[48px] md:min-w-[48px]">
+						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[24px] md:min-h-[28px] md:min-w-[28px] lg:min-h-[28px] lg:min-w-[28px] xl:min-h-[48px] xl:min-w-[48px] xl:text-[24px]">
 						2
 					</div>
 					<div
@@ -157,7 +157,7 @@
 				class="border-t-driveway md:border-l-driveway flex flex-1/3 flex-col gap-6 border-t-1 pt-4 md:border-t-0 md:border-l-1 md:pt-0 md:pl-6">
 				<div class="flex items-center gap-3">
 					<div
-						class="text-cumulus bg-driveway font-die-a type-title flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full md:min-h-[48px] md:min-w-[48px]">
+						class="text-cumulus bg-driveway font-die-a flex min-h-[26px] min-w-[26px] items-center justify-center rounded-full text-[18px] leading-[24px] md:min-h-[28px] md:min-w-[28px] lg:min-h-[28px] lg:min-w-[28px] xl:min-h-[48px] xl:min-w-[48px] xl:text-[24px]">
 						3
 					</div>
 					<div
