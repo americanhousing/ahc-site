@@ -30,7 +30,7 @@
 		</div>
 		<div class="mx-auto flex h-svh max-w-[1440px] items-end p-4 md:p-6">
 			<h1
-				class="font-die-d text-cumulus type-display font-medium transition-all duration-500 will-change-transform"
+				class="font-die-d text-cumulus type-display font-medium transition-[color,transform] duration-500 will-change-transform"
 				class:shifted-alpha={shouldDisplayShiftedStage}>
 				Saving the<br />
 				American Dream
@@ -42,7 +42,7 @@
 		<div class="h-4 md:h-6"></div>
 		<div class="flex flex-col gap-4 px-4 md:flex-row md:gap-6 md:px-6">
 			<h2
-				class="font-die-d text-driveway type-display flex-1/2 font-medium transition-all duration-500 will-change-transform"
+				class="font-die-d text-driveway type-display flex-1/2 font-medium transition-[color,transform] duration-500 will-change-transform"
 				class:shifted-beta={shouldDisplayShiftedStage}>
 				Through All-Out<br />
 				Housing Production

@@ -64,6 +64,8 @@
 		}
 
 		requestAnimationFrame(measureWhenReady);
+
+		window.addEventListener("load", measureWhenReady);
 	});
 </script>
 
