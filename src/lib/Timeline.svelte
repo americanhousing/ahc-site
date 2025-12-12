@@ -16,7 +16,9 @@
 	let scroller = $state<HTMLElement | undefined>(undefined);
 	let horizontalPadding = $state<number>(0);
 	let currentIndex = $state<number>(0);
-	let windowWidth = $state<number>(typeof window !== "undefined" ? window.innerWidth : 1440);
+	let windowWidth = $state<number>(
+		typeof window !== "undefined" ? window.innerWidth : 1440
+	);
 
 	let itemDimensions = $derived.by(() => {
 		const scaledWidth = (windowWidth * 1116) / 1440;
@@ -25,6 +27,14 @@
 
 		return { width, height };
 	});
+
+	let scrollerStyle = $derived(
+		`padding-left: ${horizontalPadding}px; padding-right: ${horizontalPadding}px;`
+	);
+
+	let itemStyle = $derived(
+		`width: ${itemDimensions.width}px; height: ${itemDimensions.height}px; min-width: ${itemDimensions.width}px;`
+	);
 
 	function calculatePadding() {
 		const maxWidth = 1392;
@@ -104,14 +114,14 @@
 
 <div
 	bind:this={scroller}
-	class="scrollbar-none hidden flex-nowrap gap-6 overflow-x-auto md:flex"
-	style="padding-left: {horizontalPadding}px; padding-right: {horizontalPadding}px;">
+	class="scrollbar-none flex flex-nowrap gap-6 overflow-x-auto"
+	style={scrollerStyle}>
 	{#each items as item, index}
 		<button
 			type="button"
 			onclick={() => didClickItem(index)}
 			class="bg-driveway/20 relative cursor-pointer rounded-[2px]"
-			style="width: {itemDimensions.width}px; height: {itemDimensions.height}px; min-width: {itemDimensions.width}px;">
+			style={itemStyle}>
 			{#if item.image !== undefined}
 				<img
 					src={item.image}
