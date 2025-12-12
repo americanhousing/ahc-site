@@ -16,15 +16,14 @@
 		const rect = thresholdElement.getBoundingClientRect();
 
 		shouldElevateRoof =
-			// isRoofRevealed === true ||
-			rect.top < window.innerHeight * 0.8;
+			isRoofRevealed === true || rect.top < window.innerHeight * 0.8;
 
 		shouldElevateTopFloor =
-			// isBottomRevealed === true ||
+			isBottomRevealed === true ||
 			rect.bottom <= window.innerHeight * 1.1;
 
 		shouldElevateBottomFloor =
-			// isBottomRevealed === true ||
+			isBottomRevealed === true ||
 			rect.bottom <= window.innerHeight * 1.1;
 
 		isRoofRevealed = isRoofRevealed || shouldElevateRoof;

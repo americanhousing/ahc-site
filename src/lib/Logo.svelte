@@ -1,12 +1,21 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
+	import { page } from "$app/stores";
+
 	interface Props {
 		isOnLightBackground: boolean;
 	}
 
 	let { isOnLightBackground }: Props = $props();
 
+	const isHomePage = $derived($page.url.pathname === "/");
+
 	function didClickLogo() {
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		if (isHomePage === true) {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		} else {
+			goto("/");
+		}
 	}
 </script>
 
