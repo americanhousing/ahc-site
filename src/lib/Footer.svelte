@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onMount, onDestroy } from "svelte";
 
 	let thresholdElement = $state<HTMLElement | undefined>();
 	let shouldElevateRoof = $state<boolean>(false);
@@ -42,13 +42,17 @@
 	onMount(() => {
 		updateElevationState();
 	});
+
+	onDestroy(() => {
+		document.body.style.backgroundColor = "";
+	});
 </script>
 
 <svelte:window onscroll={didChangeViewport} onresize={didChangeViewport} />
 
 <div class="bg-blue">
 	<div
-		class="text-cumulus font-die-a type-caption mx-auto flex h-[890px] max-h-[100svh] min-h-[400px] max-w-[1440px] flex-col overflow-hidden p-6 md:h-[70vh] md:max-h-[800px] md:min-h-[400px]"
+		class="text-cumulus font-die-a type-caption mx-auto flex h-[890px] max-h-[110svh] min-h-[400px] max-w-[1440px] flex-col overflow-hidden p-6 md:h-[70vh] md:max-h-[800px] md:min-h-[400px]"
 		bind:this={thresholdElement}>
 		<div class="h-[80px] md:hidden"></div>
 		<img
@@ -119,7 +123,7 @@
 				type="submit"
 				value="Sign up" />
 		</div>
-		<div class="h-[64px]"></div>
+		<div class="h-[40px] md:h-[64px]"></div>
 		<div
 			class="flex translate-y-12 flex-col-reverse font-medium opacity-0 transition-all delay-700 duration-1500 ease-out md:flex-row md:font-normal"
 			class:opacity-100={shouldElevateBottomFloor}

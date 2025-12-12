@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import TimelineMobile from "./TimelineMobile.svelte";
 
 	type TimelineItem = {
 		year: string;
@@ -112,27 +113,33 @@
 
 <svelte:window onresize={didResizeWindow} onkeydown={didPressKey} />
 
-<div
-	bind:this={scroller}
-	class="scrollbar-none flex flex-nowrap gap-6 overflow-x-auto"
-	style={scrollerStyle}>
-	{#each items as item, index}
-		<button
-			type="button"
-			onclick={() => didClickItem(index)}
-			class="bg-driveway/20 relative cursor-pointer rounded-[2px]"
-			style={itemStyle}>
-			{#if item.image !== undefined}
-				<img
-					src={item.image}
-					alt=""
-					class="h-full w-full rounded-[2px] object-cover" />
-			{/if}
-			<div
-				class="bg-cumulus/20 absolute bottom-6 left-6 flex w-auto gap-2 rounded-[2px] px-6 py-4 font-medium backdrop-blur-lg">
-				<span class="text-cumulus">{item.year}</span>
-				<span class="text-driveway">{item.text}</span>
-			</div>
-		</button>
-	{/each}
+<div class="hidden md:block">
+	<div
+		bind:this={scroller}
+		class="scrollbar-none flex flex-nowrap gap-6 overflow-x-auto"
+		style={scrollerStyle}>
+		{#each items as item, index}
+			<button
+				type="button"
+				onclick={() => didClickItem(index)}
+				class="bg-driveway/20 relative cursor-pointer rounded-[2px]"
+				style={itemStyle}>
+				{#if item.image !== undefined}
+					<img
+						src={item.image}
+						alt=""
+						class="h-full w-full rounded-[2px] object-cover" />
+				{/if}
+				<div
+					class="bg-cumulus/20 absolute bottom-6 left-6 flex w-auto gap-2 rounded-[2px] px-6 py-4 font-medium backdrop-blur-lg">
+					<span class="text-cumulus">{item.year}</span>
+					<span class="text-driveway">{item.text}</span>
+				</div>
+			</button>
+		{/each}
+	</div>
+</div>
+
+<div class="md:hidden">
+	<TimelineMobile {items} />
 </div>
