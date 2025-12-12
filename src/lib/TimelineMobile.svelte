@@ -18,6 +18,7 @@
 
 	let container = $state<HTMLElement | undefined>(undefined);
 	let currentIndex = $state<number>(0);
+	let targetIndex = $state<number>(0);
 	let slideOffset = $state<number>(0);
 	let isSliding = $state<boolean>(false);
 	let transitionsEnabled = $state<boolean>(true);
@@ -60,6 +61,7 @@
 	});
 
 	let progressBarWidth = $derived(4 + progress * 18);
+	let activeProgressIndex = $derived(isSliding ? targetIndex : currentIndex);
 
 	function normalizeIndex(index: number): number {
 		if (length === 0) {
@@ -74,8 +76,8 @@
 			return;
 		}
 
-		const targetIndex = normalizeIndex(currentIndex + direction);
-
+		targetIndex = normalizeIndex(currentIndex + direction);
+		progress = 0;
 		isSliding = true;
 		transitionsEnabled = true;
 		slideOffset = -direction;
@@ -86,7 +88,6 @@
 
 		slideTimeout = setTimeout(() => {
 			transitionsEnabled = false;
-			progress = 0;
 			currentIndex = targetIndex;
 			slideOffset = 0;
 
@@ -127,7 +128,10 @@
 
 		if (elapsed >= autoAdvanceDelayMs) {
 			stopAutoAdvance();
-			startSlide(1);
+
+			setTimeout(() => {
+				startSlide(1);
+			}, 0);
 
 			return;
 		}
@@ -206,9 +210,9 @@
 				<img
 					src={entry.item.image}
 					alt=""
-					class="h-full w-full object-cover" />
+					class="h-full w-full rounded-[2px] object-cover" />
 			{:else}
-				<div class="bg-driveway/20 h-full w-full"></div>
+				<div class="bg-driveway/20 h-full w-full rounded-[2px]"></div>
 			{/if}
 			<div
 				class="bg-cumulus/20 absolute bottom-0 left-0 flex w-full flex-col rounded-[2px] p-4 py-2 font-medium backdrop-blur-lg">
@@ -223,13 +227,19 @@
 		class:opacity-0={!isVisible}
 		class:opacity-100={isVisible}>
 		{#each items as _, index}
-			{@const isCurrentItem = index === currentIndex}
+			{@const isActiveItem = index === activeProgressIndex}
+			{@const isCompletedItem = index < activeProgressIndex}
 
-			<div class="bg-cumulus/60 relative h-1 w-[22px] overflow-hidden rounded-full">
-				{#if isCurrentItem && isSliding === false}
+			<div
+				class="bg-cumulus/60 relative h-1 w-[22px] overflow-hidden rounded-full">
+				{#if isActiveItem}
 					<div
 						class="bg-driveway absolute top-0 left-0 h-full rounded-full"
 						style:width="{progressBarWidth}px">
+					</div>
+				{:else if isCompletedItem}
+					<div
+						class="bg-driveway absolute top-0 left-0 h-full w-full rounded-full">
 					</div>
 				{/if}
 			</div>
