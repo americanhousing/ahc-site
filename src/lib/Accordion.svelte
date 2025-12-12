@@ -6,9 +6,10 @@
 
 	type Props = {
 		items: Item[];
+		color?: "blue" | "driveway";
 	};
 
-	const { items }: Props = $props();
+	const { items, color = "blue" }: Props = $props();
 
 	let indexForActiveItem = $state<number>(0);
 
@@ -17,8 +18,7 @@
 	}
 </script>
 
-<div
-	class="font-die-a type-title flex flex-col gap-6 font-medium">
+<div class="font-die-a type-title flex flex-col gap-6 font-medium">
 	{#each items as item, index}
 		{@const isActive = index === indexForActiveItem}
 
@@ -30,14 +30,14 @@
 					<img
 						class="absolute top-0 left-0 group-hover:opacity-100"
 						class:opacity-0={isActive === false}
-						src="/icons/bullet-active-blue.svg"
+						src="/icons/bullet-active-{color}.svg"
 						width="16"
 						height="16"
 						alt="" />
 					<img
 						class="absolute top-0 left-0"
 						class:opacity-0={isActive === true}
-						src="/icons/bullet-inactive-blue.svg"
+						src="/icons/bullet-inactive-{color}.svg"
 						width="16"
 						height="16"
 						alt="" />
@@ -47,7 +47,7 @@
 
 			{#if isActive === true}
 				<div>
-					<div class="h-[40px]"></div>
+					<div class="h-[24px] md:h-[32px] xl:h-[40px]"></div>
 					<div class="text-driveway font-normal">
 						{item.text}
 					</div>

@@ -4,6 +4,7 @@
 	import Logo from "./Logo.svelte";
 	import Rollover from "./Rollover.svelte";
 
+	const isInnerPage = $derived($page.url.pathname !== "/");
 	const isCareersPage = $derived($page.url.pathname === "/careers");
 
 	let isOnLightBackground = $state(false);
@@ -50,9 +51,13 @@
 
 <div
 	bind:this={headerElement}
-	class="sticky -top-13 z-10 h-0 w-screen"
-	class:-translate-y-13={isCareersPage}>
-	<div class="relative top-13 mx-auto w-full max-w-[1440px]">
+	class="z-10 h-0 w-screen"
+	class:sticky={isInnerPage === false}
+	class:fixed={isInnerPage === true}
+	class:-top-13={isInnerPage === false}>
+	<div
+		class="relative mx-auto w-full max-w-[1440px]"
+		class:top-13={isInnerPage === false}>
 		<Logo {isOnLightBackground} />
 		{#if isCareersPage === false}
 			<div

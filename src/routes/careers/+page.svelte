@@ -17,7 +17,7 @@
 			</h4>
 			<div class="h-[24px] md:hidden"></div>
 			<div
-				class="bg-driveway/20 mr-6 aspect-[560/644] h-auto w-full flex-5/12 rounded-[2px] lg:aspect-[920/644]">
+				class="bg-driveway/20 mr-6 aspect-[560/800] h-auto w-full flex-5/12 rounded-[2px] lg:aspect-[556/800]">
 			</div>
 			<div
 				class="md:border-l-driveway flex flex-7/12 flex-col md:border-l-1 md:pl-6">
@@ -25,7 +25,7 @@
 					class="font-die-d text-driveway type-display hidden font-medium md:block">
 					Careers
 				</h4>
-				<div class="hidden min-h-[40px] flex-1 md:block"></div>
+				<div class="min-h-[160px] flex-1 md:min-h-[200px]"></div>
 				{#each Array(3).fill(undefined) as _}
 					<div class="border-driveway flex border-b-1 py-4 md:py-6">
 						<div class="font-die-a type-body flex flex-col">

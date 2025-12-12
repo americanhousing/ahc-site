@@ -72,7 +72,7 @@
 			alt="American Housing" />
 		<div class="flex-1"></div>
 		<div
-			class="flex translate-y-12 flex-row-reverse items-start gap-0 opacity-0 transition-all delay-500 duration-1500 ease-out md:flex-row md:gap-12"
+			class="flex translate-y-12 flex-row-reverse items-start gap-0 opacity-0 transition-all delay-200 duration-1500 ease-out md:flex-row md:gap-12"
 			class:opacity-100={shouldElevateTopFloor}
 			class:translate-none={shouldElevateTopFloor}>
 			<div class="flex items-center gap-6">
@@ -110,7 +110,7 @@
 		</div>
 		<div class="h-[24px] md:hidden"></div>
 		<div
-			class="border-b-cumulus flex translate-y-12 border-b-1 pb-0.5 opacity-0 transition-all delay-600 duration-1500 ease-out md:hidden md:w-[250px]"
+			class="border-b-cumulus flex translate-y-12 border-b-1 pb-0.5 opacity-0 transition-all delay-400 duration-1500 ease-out md:hidden md:w-[250px]"
 			class:opacity-100={shouldElevateBottomFloor}
 			class:translate-none={shouldElevateBottomFloor}>
 			<input
@@ -124,7 +124,7 @@
 		</div>
 		<div class="h-[40px] md:h-[64px]"></div>
 		<div
-			class="flex translate-y-12 flex-col-reverse font-medium opacity-0 transition-all delay-700 duration-1500 ease-out md:flex-row md:font-normal"
+			class="flex translate-y-12 flex-col-reverse font-medium opacity-0 transition-all delay-600 duration-1500 ease-out md:flex-row md:font-normal"
 			class:opacity-100={shouldElevateBottomFloor}
 			class:translate-none={shouldElevateBottomFloor}>
 			<div>
