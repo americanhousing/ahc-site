@@ -47,11 +47,7 @@
 	}
 
 	onMount(() => {
-		updateElevationState();
-	});
-
-	onDestroy(() => {
-		document.body.style.backgroundColor = "";
+		setTimeout(updateElevationState, 500);
 	});
 </script>
 

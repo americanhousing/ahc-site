@@ -35,7 +35,7 @@
 				<div
 					class="md:border-l-cumulus flex flex-1/2 flex-col md:border-l-1 md:pl-6">
 					<div
-						class="text-cumulus type-body md:type-display font-medium text-balance">
+						class="text-cumulus type-body md:type-display font-medium">
 						Over 250 years, a simple truth took form: the American
 						Dream is built, not inherited.
 					</div>
@@ -52,7 +52,7 @@
 				<br />
 			</p>
 			<p
-				class="type-body md:type-display text-cumulus font-gt-super-book text-balance">
+				class="type-body md:type-display text-cumulus font-gt-super-book">
 				Today, many who say the American Dream is dead are really
 				talking about housing. Too many families can’t afford a starter
 				home in the cities they love. From the moment they plan for a
@@ -70,7 +70,7 @@
 				<div
 					class="md:border-l-cumulus flex flex-1/2 flex-col md:border-l-1 md:pl-6">
 					<div
-						class="text-cumulus type-body md:type-display font-medium text-balance">
+						class="text-cumulus type-body md:type-display font-medium">
 						<p>
 							When families are priced out, cities hollow out. And
 							as cities go, so goes America.
@@ -181,7 +181,7 @@
 				<div
 					class="md:border-l-cumulus flex flex-1/2 flex-col md:border-l-1 md:pl-6">
 					<div
-						class="text-cumulus type-body md:type-display font-medium text-balance">
+						class="text-cumulus type-body md:type-display font-medium">
 						<p>
 							Block by block, city by city, let’s build a new home
 							for the American Dream.
