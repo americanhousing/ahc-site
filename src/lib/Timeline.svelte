@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 	import TimelineMobile from "./TimelineMobile.svelte";
 
 	type TimelineItem = {
@@ -13,6 +13,8 @@
 	};
 
 	const { items }: Props = $props();
+	const dragClickThresholdPx = 12;
+	const dragMultiplier = 2;
 
 	let scroller = $state<HTMLElement | undefined>(undefined);
 	let horizontalPadding = $state<number>(0);
@@ -20,6 +22,13 @@
 	let windowWidth = $state<number>(
 		typeof window !== "undefined" ? window.innerWidth : 1440
 	);
+	let isDragging = $state<boolean>(false);
+	let dragPointerId = $state<number | null>(null);
+	let dragStartX = $state<number>(0);
+	let dragStartScrollLeft = $state<number>(0);
+	let dragHasMoved = $state<boolean>(false);
+	let dragResetTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
+	let dragCaptureTarget = $state<HTMLElement | null>(null);
 
 	let itemDimensions = $derived.by(() => {
 		const scaledWidth = (windowWidth * 1116) / 1440;
@@ -74,7 +83,76 @@
 	}
 
 	function didClickItem(index: number) {
+		if (isDragging || dragHasMoved) {
+			return;
+		}
+
 		scrollToItem(index);
+	}
+
+	function didStartDrag(event: PointerEvent) {
+		if (scroller === undefined || event.button !== 0) {
+			return;
+		}
+
+		const handle = (
+			event.target as HTMLElement | null
+		)?.closest<HTMLElement>("[data-timeline-handle]");
+		const captureTarget = handle ?? scroller;
+
+		dragPointerId = event.pointerId;
+		isDragging = true;
+		dragHasMoved = false;
+		dragStartX = event.clientX;
+		dragStartScrollLeft = scroller.scrollLeft;
+		dragCaptureTarget = captureTarget;
+
+		if (dragResetTimeout !== undefined) {
+			clearTimeout(dragResetTimeout);
+		}
+
+		captureTarget?.setPointerCapture?.(event.pointerId);
+	}
+
+	function didDrag(event: PointerEvent) {
+		if (
+			isDragging === false ||
+			dragPointerId !== event.pointerId ||
+			scroller === undefined
+		) {
+			return;
+		}
+
+		const deltaX = event.clientX - dragStartX;
+
+		if (Math.abs(deltaX) >= dragClickThresholdPx) {
+			dragHasMoved = true;
+		}
+
+		scroller.scrollLeft = dragStartScrollLeft - deltaX * dragMultiplier;
+		event.preventDefault();
+	}
+
+	function didEndDrag(event: PointerEvent) {
+		if (isDragging === false || dragPointerId !== event.pointerId) {
+			return;
+		}
+
+		if (dragCaptureTarget?.hasPointerCapture?.(event.pointerId)) {
+			dragCaptureTarget.releasePointerCapture(event.pointerId);
+		}
+
+		isDragging = false;
+		dragPointerId = null;
+		dragCaptureTarget = null;
+
+		if (dragResetTimeout !== undefined) {
+			clearTimeout(dragResetTimeout);
+		}
+
+		dragResetTimeout = window.setTimeout(() => {
+			dragHasMoved = false;
+		}, 0);
 	}
 
 	function didPressKey(event: KeyboardEvent) {
@@ -109,6 +187,12 @@
 	onMount(() => {
 		calculatePadding();
 	});
+
+	onDestroy(() => {
+		if (dragResetTimeout !== undefined) {
+			clearTimeout(dragResetTimeout);
+		}
+	});
 </script>
 
 <svelte:window onresize={didResizeWindow} onkeydown={didPressKey} />
@@ -116,14 +200,21 @@
 <div class="hidden md:block">
 	<div
 		bind:this={scroller}
-		class="scrollbar-none flex flex-nowrap gap-6 overflow-x-auto"
-		style={scrollerStyle}>
+		class="scrollbar-none flex cursor-grab flex-nowrap gap-6 overflow-x-auto"
+		class:cursor-grabbing={isDragging}
+		style:touch-action="pan-y"
+		style={scrollerStyle}
+		onpointerdown={didStartDrag}
+		onpointermove={didDrag}
+		onpointerup={didEndDrag}
+		onpointercancel={didEndDrag}>
 		{#each items as item, index}
 			<button
 				type="button"
 				onclick={() => didClickItem(index)}
 				class="bg-driveway/20 relative cursor-pointer rounded-[2px]"
-				style={itemStyle}>
+				style={itemStyle}
+				data-timeline-handle>
 				{#if item.image !== undefined}
 					<img
 						src={item.image}

@@ -11,6 +11,9 @@
 
 	const visibleOffsets = [-2, -1, 0, 1, 2];
 	const slideDurationMs = 400;
+	const dragThreshold = 0.18;
+	const dragClickThresholdPx = 12;
+	const maxSlideOffset = 1.25;
 
 	let container = $state<HTMLElement | undefined>(undefined);
 
@@ -22,9 +25,14 @@
 	let indexForCurrentImage = $state<number>(0);
 	let slideOffset = $state<number>(0);
 	let isSliding = $state<boolean>(false);
+	let isDragging = $state<boolean>(false);
 	let transitionsEnabled = $state<boolean>(true);
 	let slideTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
 	let resizeTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
+	let dragPointerId = $state<number | null>(null);
+	let dragStartX = $state<number>(0);
+	let dragHasMoved = $state<boolean>(false);
+	let dragResetTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
 
 	let baseImageDimensions = $derived.by(() => {
 		const scaledWidth = (windowSize.width * 1116) / 1440;
@@ -135,6 +143,10 @@
 	}
 
 	function didClickItem(offset: number) {
+		if (isDragging || dragHasMoved) {
+			return;
+		}
+
 		if (offset === 0) {
 			startSlide(1);
 			return;
@@ -170,6 +182,98 @@
 				isSliding = false;
 			});
 		}, slideDurationMs);
+	}
+
+	function didStartDrag(event: PointerEvent) {
+		if (length < 2 || isSliding || event.button !== 0) {
+			return;
+		}
+
+		const handle = (event.target as HTMLElement | null)?.closest("[data-carousel-handle]");
+
+		if (handle === null) {
+			return;
+		}
+
+		dragStartX = event.clientX;
+		dragPointerId = event.pointerId;
+		isDragging = true;
+		dragHasMoved = false;
+		transitionsEnabled = false;
+
+		if (dragResetTimeout !== undefined) {
+			clearTimeout(dragResetTimeout);
+		}
+
+		handle?.setPointerCapture?.(event.pointerId);
+	}
+
+	function didDrag(event: PointerEvent) {
+		if (isDragging === false || dragPointerId !== event.pointerId) {
+			return;
+		}
+
+		const deltaX = event.clientX - dragStartX;
+		const slideDistance = baseImageDimensions.width + gap;
+
+		if (slideDistance <= 0) {
+			return;
+		}
+
+		if (Math.abs(deltaX) >= dragClickThresholdPx) {
+			dragHasMoved = true;
+		}
+
+		const normalized = deltaX / slideDistance;
+		const clamped = Math.max(-maxSlideOffset, Math.min(maxSlideOffset, normalized));
+
+		slideOffset = clamped;
+	}
+
+	function didEndDrag(event: PointerEvent) {
+		if (isDragging === false || dragPointerId !== event.pointerId) {
+			return;
+		}
+
+		const handle = (event.target as HTMLElement | null)?.closest("[data-carousel-handle]");
+		const deltaX = event.clientX - dragStartX;
+		const slideDistance = baseImageDimensions.width + gap;
+		const clickCancelThreshold = Math.max(dragClickThresholdPx, slideDistance * 0.04);
+		const distance = Math.abs(deltaX);
+		const normalized = slideDistance <= 0 ? 0 : deltaX / slideDistance;
+
+		if (distance >= clickCancelThreshold) {
+			dragHasMoved = true;
+		}
+
+		if (handle?.hasPointerCapture?.(event.pointerId)) {
+			handle.releasePointerCapture(event.pointerId);
+		}
+
+		isDragging = false;
+		dragPointerId = null;
+
+		if (Math.abs(normalized) >= dragThreshold) {
+			const direction = normalized < 0 ? 1 : -1;
+
+			transitionsEnabled = false;
+			slideOffset = Math.max(-1, Math.min(1, normalized));
+
+			requestAnimationFrame(() => {
+				startSlide(direction);
+			});
+		} else {
+			transitionsEnabled = true;
+			slideOffset = 0;
+		}
+
+		if (dragResetTimeout !== undefined) {
+			clearTimeout(dragResetTimeout);
+		}
+
+		dragResetTimeout = window.setTimeout(() => {
+			dragHasMoved = false;
+		}, 0);
 	}
 
 	function didPressKey(e: KeyboardEvent) {
@@ -228,8 +332,14 @@
 </div>
 
 <div
-	class="relative hidden w-screen overflow-hidden md:block"
+	class="relative hidden w-screen cursor-grab overflow-hidden md:block"
 	style={styleForContainer}
+	style:touch-action="pan-y"
+	class:cursor-grabbing={isDragging}
+	onpointerdown={didStartDrag}
+	onpointermove={didDrag}
+	onpointerup={didEndDrag}
+	onpointercancel={didEndDrag}
 	bind:this={container}>
 	{#each visibleItems as item, slotIndex (item.key)}
 		{#if item.offset !== 0}
@@ -237,6 +347,7 @@
 				class="absolute top-0 left-0 cursor-pointer border-none bg-transparent p-0 transition-transform duration-400 ease-out will-change-transform"
 				class:transition-none={!transitionsEnabled}
 				style={stylesForSlots[slotIndex]?.container}
+				data-carousel-handle
 				onclick={() => didClickItem(item.offset)}>
 				<img
 					class="bg-driveway/20 cursor-pointer rounded-[2px] object-cover transition-transform duration-400 ease-out"
@@ -251,6 +362,7 @@
 				class="absolute top-0 left-0 cursor-pointer border-none bg-transparent p-0 transition-transform duration-400 ease-out will-change-transform"
 				class:transition-none={!transitionsEnabled}
 				style={stylesForSlots[slotIndex]?.container}
+				data-carousel-handle
 				onclick={() => didClickItem(item.offset)}>
 				<img
 					class="bg-driveway/20 rounded-[2px] object-cover transition-transform duration-400 ease-out"
