@@ -115,34 +115,64 @@
 			<div class="h-[48px] md:h-[120px]"></div>
 			<section>
 				<div
-					class="type-subhead border-b-cumulus text-cumulus border-b-1 pb-[48px]">
+					class="type-label md:type-subhead border-b-cumulus text-cumulus border-b-1 pb-[16px] md:pb-[48px]">
 					Here's how we work
 				</div>
 				<div
-					class="type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[48px] font-medium">
+					class="type-body md:type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[16px] font-medium md:pb-[48px]">
 					We buy land in great neighborhoods near centers of
 					prosperity.
 				</div>
 				<div
-					class="type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[48px] font-medium">
+					class="type-body md:type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[16px] font-medium md:pb-[48px]">
 					We manufacture every component in automated U.S. factories.
 				</div>
 				<div
-					class="type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[48px] font-medium">
+					class="type-body md:type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[16px] font-medium md:pb-[48px]">
 					We design and engineer attractive, modular homes optimized
 					for families.
 				</div>
 				<div
-					class="type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[48px] font-medium">
+					class="type-body md:type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[16px] font-medium md:pb-[48px]">
 					We deliver the building parts across the nation and assemble
 					on-site.
 				</div>
 				<div
-					class="type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[48px] font-medium">
+					class="type-body md:type-headline border-b-cumulus text-cumulus border-b-1 pt-[16px] pb-[16px] font-medium md:pb-[48px]">
 					We sell and rent these homes directly to people.
 				</div>
 			</section>
 			<div class="h-[48px] md:h-[120px]"></div>
+
+			<p
+				class="type-body md:type-display text-cumulus font-gt-super-book">
+				We’re starting by perfecting the rowhouse, the original American
+				urban home. Compact, walkable, and rooted in place, rowhouses
+				make ideal starter homes for families who want city life without
+				sacrificing space, privacy, or quality.
+			</p>
+			<p
+				class="type-body md:type-display text-cumulus font-gt-super-book">
+				<br />
+			</p>
+			<p
+				class="type-body md:type-display text-cumulus font-gt-super-book">
+				This is just the beginning of a larger vision. We imagine
+				thriving neighborhoods and entire cities where families can stay
+				and grow. Where parents find opportunity and children find
+				friends. Where architecture is beautiful and neighbors look out
+				for each other.
+			</p>
+			<p
+				class="type-body md:type-display text-cumulus font-gt-super-book">
+				<br />
+			</p>
+			<p
+				class="type-body md:type-display text-cumulus font-gt-super-book">
+				Because this is more than housing. It’s a new national project
+				to secure our future.
+			</p>
+			<div class="h-[48px] md:h-[84px]"></div>
 			<div class="flex flex-col md:flex-row">
 				<div
 					class="bg-driveway/20 mr-6 aspect-[560/644] h-auto w-full flex-1/2 rounded-[2px] lg:aspect-[684/855]">
