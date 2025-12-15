@@ -113,7 +113,7 @@
 						class="text-driveway font-normal transition-opacity duration-250 ease-in-out"
 						class:opacity-0={!isActive}
 						class:opacity-100={isActive}
-						class:delay-250={isActive}
+						class:delay-350={isActive}
 						class:delay-0={!isActive}>
 						{item.text}
 					</div>

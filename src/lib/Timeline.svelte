@@ -90,6 +90,35 @@
 		scrollToItem(index);
 	}
 
+	function snapToNearestItem() {
+		if (scroller === undefined) {
+			return;
+		}
+
+		const itemElements = scroller.children;
+
+		if (itemElements.length === 0) {
+			return;
+		}
+
+		const viewportCenter = scroller.scrollLeft + scroller.clientWidth / 2;
+		let nearestIndex = 0;
+		let smallestDistance = Number.POSITIVE_INFINITY;
+
+		for (let index = 0; index < itemElements.length; index += 1) {
+			const item = itemElements[index] as HTMLElement;
+			const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+			const distance = Math.abs(itemCenter - viewportCenter);
+
+			if (distance < smallestDistance) {
+				smallestDistance = distance;
+				nearestIndex = index;
+			}
+		}
+
+		scrollToItem(nearestIndex);
+	}
+
 	function didStartDrag(event: PointerEvent) {
 		if (scroller === undefined || event.button !== 0) {
 			return;
@@ -138,6 +167,8 @@
 			return;
 		}
 
+		const movedDuringDrag = dragHasMoved;
+
 		if (dragCaptureTarget?.hasPointerCapture?.(event.pointerId)) {
 			dragCaptureTarget.releasePointerCapture(event.pointerId);
 		}
@@ -153,6 +184,10 @@
 		dragResetTimeout = window.setTimeout(() => {
 			dragHasMoved = false;
 		}, 0);
+
+		if (movedDuringDrag) {
+			snapToNearestItem();
+		}
 	}
 
 	function didPressKey(event: KeyboardEvent) {

@@ -67,7 +67,7 @@
 					</div>
 					<div class="h-[48px] md:h-[64px]"></div>
 					<a
-						class="text-blue font-die-a type-body group flex items-center gap-2 font-normal"
+						class="text-blue font-die-a type-body group flex items-center gap-2 self-start font-normal"
 						href="/mission">
 						<Rollover text="Our Mission" />
 						<img
