@@ -57,6 +57,11 @@
 	--font-gt-super-book: "gt-super-book", serif;
 }
 
+@utility type-headline {
+	font-size: 48px;
+	line-height: 48px;
+}
+
 @utility type-display {
 	font-size: 36px;
 	line-height: 36px;
@@ -65,6 +70,11 @@
 		font-size: 64px;
 		line-height: 64px;
 	}
+}
+
+@utility type-subhead {
+	font-size: 24px;
+	line-height: 24px;
 }
 
 @utility type-title {
