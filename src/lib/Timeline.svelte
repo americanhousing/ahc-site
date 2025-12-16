@@ -30,6 +30,12 @@
 	let dragResetTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
 	let dragCaptureTarget = $state<HTMLElement | null>(null);
 
+	type DragSample = { x: number; time: number };
+
+	let dragSamples: DragSample[] = [];
+	const dragSampleLimit = 5;
+	const velocityDecayFactor = 0.15;
+
 	let itemDimensions = $derived.by(() => {
 		const scaledWidth = (windowWidth * 1116) / 1440;
 		const width = Math.min(1116, scaledWidth);
@@ -90,7 +96,26 @@
 		scrollToItem(index);
 	}
 
-	function snapToNearestItem() {
+	function calculateDragVelocity(): number {
+		if (dragSamples.length < 2) {
+			return 0;
+		}
+
+		const recentSamples = dragSamples.slice(-3);
+		const first = recentSamples[0];
+		const last = recentSamples[recentSamples.length - 1];
+		const timeDelta = last.time - first.time;
+
+		if (timeDelta === 0) {
+			return 0;
+		}
+
+		const positionDelta = last.x - first.x;
+
+		return (positionDelta / timeDelta) * 1000;
+	}
+
+	function snapToNearestItem(velocity: number = 0) {
 		if (scroller === undefined) {
 			return;
 		}
@@ -101,14 +126,17 @@
 			return;
 		}
 
-		const viewportCenter = scroller.scrollLeft + scroller.clientWidth / 2;
+		const projectedScrollDelta = velocity * velocityDecayFactor * dragMultiplier * -1;
+		const projectedScrollLeft = scroller.scrollLeft + projectedScrollDelta;
+		const projectedCenter = projectedScrollLeft + scroller.clientWidth / 2;
+
 		let nearestIndex = 0;
 		let smallestDistance = Number.POSITIVE_INFINITY;
 
 		for (let index = 0; index < itemElements.length; index += 1) {
 			const item = itemElements[index] as HTMLElement;
 			const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-			const distance = Math.abs(itemCenter - viewportCenter);
+			const distance = Math.abs(itemCenter - projectedCenter);
 
 			if (distance < smallestDistance) {
 				smallestDistance = distance;
@@ -135,6 +163,7 @@
 		dragStartX = event.clientX;
 		dragStartScrollLeft = scroller.scrollLeft;
 		dragCaptureTarget = captureTarget;
+		dragSamples = [{ x: event.clientX, time: performance.now() }];
 
 		if (dragResetTimeout !== undefined) {
 			clearTimeout(dragResetTimeout);
@@ -156,6 +185,12 @@
 
 		if (Math.abs(deltaX) >= dragClickThresholdPx) {
 			dragHasMoved = true;
+		}
+
+		dragSamples.push({ x: event.clientX, time: performance.now() });
+
+		if (dragSamples.length > dragSampleLimit) {
+			dragSamples.shift();
 		}
 
 		scroller.scrollLeft = dragStartScrollLeft - deltaX * dragMultiplier;
@@ -185,8 +220,10 @@
 			dragHasMoved = false;
 		}, 0);
 
-		if (movedDuringDrag) {
-			snapToNearestItem();
+		if (movedDuringDrag === true) {
+			const velocity = calculateDragVelocity();
+
+			snapToNearestItem(velocity);
 		}
 	}
 
