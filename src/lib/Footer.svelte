@@ -61,7 +61,7 @@
 		bind:this={thresholdElement}>
 		<div class="h-[80px] md:hidden"></div>
 		<img
-			class="hidden w-full translate-y-24 opacity-0 transition-all ease-out md:block md:duration-1500"
+			class="hidden w-full translate-y-24 opacity-0 transition-all ease-out md:block md:duration-1000"
 			class:translate-none={shouldElevateRoof}
 			class:opacity-100={shouldElevateRoof}
 			src={isInverted === true
@@ -71,7 +71,7 @@
 			height="180"
 			alt="American Housing" />
 		<img
-			class="w-full translate-y-1/3 opacity-0 transition-all duration-1500 ease-out md:hidden"
+			class="w-full translate-y-1/3 opacity-0 transition-all duration-1000 ease-out md:hidden"
 			class:translate-none={shouldElevateRoof}
 			class:opacity-100={shouldElevateRoof}
 			src={isInverted === true
@@ -82,7 +82,7 @@
 			alt="American Housing" />
 		<div class="flex-1"></div>
 		<div
-			class="flex translate-y-12 flex-row-reverse items-start gap-0 opacity-0 transition-all delay-200 duration-1500 ease-out md:flex-row md:gap-12"
+			class="flex translate-y-12 flex-row-reverse items-start gap-0 opacity-0 transition-all delay-200 duration-1000 ease-out md:flex-row md:gap-12"
 			class:opacity-100={shouldElevateTopFloor}
 			class:translate-none={shouldElevateTopFloor}>
 			<div class="flex items-center gap-6">
@@ -136,7 +136,7 @@
 		</div>
 		<div class="h-[24px] md:hidden"></div>
 		<div
-			class="flex translate-y-12 border-b-1 pb-0.5 opacity-0 transition-all delay-400 duration-1500 ease-out md:hidden md:w-[250px] {isInverted ===
+			class="flex translate-y-12 border-b-1 pb-0.5 opacity-0 transition-all delay-400 duration-1000 ease-out md:hidden md:w-[250px] {isInverted ===
 			true
 				? 'border-b-blue'
 				: 'border-b-cumulus'}"
@@ -153,7 +153,7 @@
 		</div>
 		<div class="h-[40px] md:h-[64px]"></div>
 		<div
-			class="flex translate-y-12 flex-col-reverse font-medium opacity-0 transition-all delay-600 duration-1500 ease-out md:flex-row md:font-normal"
+			class="flex translate-y-12 flex-col-reverse font-medium opacity-0 transition-all delay-600 duration-1000 ease-out md:flex-row md:font-normal"
 			class:opacity-100={shouldElevateBottomFloor}
 			class:translate-none={shouldElevateBottomFloor}>
 			<div>
