@@ -216,16 +216,28 @@
 		<div class="mx-auto max-w-[1440px] px-4 md:px-6">
 			<div class="border-y-driveway flex border-y-1 py-6">
 				<h3
-					class="font-die-a text-driveway/60 md:text-driveway type-title font-medium">
+					class="font-die-a text-driveway/60 md:text-driveway type-title font-medium whitespace-nowrap">
 					As Featured In
 				</h3>
-				<div class="flex-1"></div>
-				<div class="flex flex-col gap-6 md:flex-row md:gap-12">
-					<div class="bg-driveway/20 h-[24px] w-32"></div>
-					<div class="bg-driveway/20 h-[24px] w-32"></div>
-					<div class="bg-driveway/20 h-[24px] w-32"></div>
-					<div class="bg-driveway/20 h-[24px] w-32"></div>
-					<div class="bg-driveway/20 h-[24px] w-32"></div>
+				<div class="min-w-8 flex-1"></div>
+				<div
+					class="flex min-w-0 flex-col items-end gap-8 md:flex-row md:items-center md:gap-10">
+					<img
+						src="/images/logo-new-york.svg"
+						alt="New York"
+						class="max-h-[40px] w-auto shrink translate-y-1" />
+					<img
+						src="/images/logo-the-atlantic.svg"
+						alt="The Atlantic"
+						class="max-h-[36px] w-auto shrink -translate-y-1" />
+					<img
+						src="/images/logo-vox.svg"
+						alt="Vox"
+						class="max-h-[36px] w-auto shrink -translate-y-1" />
+					<img
+						src="/images/logo-washington-post.svg"
+						alt="The Washington Post"
+						class="max-h-[40px] w-auto shrink" />
 				</div>
 			</div>
 			<div class="h-[160px] md:h-[200px]"></div>
