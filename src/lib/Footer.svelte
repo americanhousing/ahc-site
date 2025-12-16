@@ -24,15 +24,14 @@
 		const rect = thresholdElement.getBoundingClientRect();
 
 		shouldElevateRoof =
-			isRoofRevealed === true || rect.top < window.innerHeight * 0.8;
+			isRoofRevealed === true || rect.top < window.innerHeight * 0.6;
 
-		shouldElevateTopFloor =
-			isBottomRevealed === true ||
-			rect.bottom <= window.innerHeight * 1.1;
+		const isAtBottom =
+			window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
 
-		shouldElevateBottomFloor =
-			isBottomRevealed === true ||
-			rect.bottom <= window.innerHeight * 1.1;
+		shouldElevateTopFloor = isBottomRevealed === true || isAtBottom === true;
+
+		shouldElevateBottomFloor = isBottomRevealed === true || isAtBottom === true;
 
 		isRoofRevealed = isRoofRevealed || shouldElevateRoof;
 
