@@ -177,35 +177,35 @@
 	<div class="bg-cumulus hidden md:block">
 		<div class="mx-auto flex max-w-[1440px] px-6">
 			<div
-				class="bg-driveway/20 mr-6 aspect-[560/515] h-auto w-full flex-2/3 rounded-[2px] lg:aspect-[920/644]">
+				class="bg-driveway/20 mr-6 aspect-[560/515] h-auto w-full flex-2/3 rounded-[2px] md:aspect-[920/720]">
 			</div>
 			<div
 				class="border-l-driveway type-title flex flex-1/3 flex-col border-l-1 pl-6">
 				<h4 class="font-die-d text-driveway type-display font-medium">
 					End-To-End Tech
 				</h4>
-				<div class="flex-1"></div>
+				<div class="min-h-[40px] flex-1"></div>
 				<Accordion
 					items={[
 						{
 							title: "Building Systems",
-							text: "Supporting text goes here in this space like this. Supporting text goes here in this space like this."
+							text: "We design and engineer a proprietary, componentized building system, optimized for high-volume manufacturing and adaptable to real-world site conditions."
 						},
 						{
 							title: "Factory",
-							text: "Supporting text goes here in this space like this. Supporting text goes here in this space like this."
-						},
-						{
-							title: "Logistics",
-							text: "Supporting text goes here in this space like this. Supporting text goes here in this space like this."
-						},
-						{
-							title: "Installation",
-							text: "Supporting text goes here in this space like this. Supporting text goes here in this space like this."
+							text: "We manufacture and assemble every major component in our own factories, using custom machines and tools engineered in-house to automate production and ensure consistent quality."
 						},
 						{
 							title: "Software",
-							text: "Supporting text goes here in this space like this. Supporting text goes here in this space like this."
+							text: "Our proprietary software orchestrates the entire production stack — tracking materials, analyzing properties, and optimizing tasks in real time across design, manufacturing, and assembly."
+						},
+						{
+							title: "Logistics",
+							text: "Each complete building system is designed to fit into a single intermodal container, enabling efficient shipment to any site in the country."
+						},z
+						{
+							title: "Installation",
+							text: "Our rowhomes are assembled on-site in days. Simple connections, purpose-built rigs, and repeatable processes make installation safe, fast, and precise."
 						}
 					]} />
 			</div>
@@ -215,7 +215,7 @@
 
 	<div class="bg-cumulus">
 		<div class="mx-auto max-w-[1440px] px-4 md:px-6">
-			<div class="border-y-driveway flex border-y-1 py-6">
+			<div class="border-y-driveway flex items-center border-y-1 py-6">
 				<h3
 					class="font-die-a text-driveway/60 md:text-driveway type-title font-medium whitespace-nowrap">
 					As Featured In
