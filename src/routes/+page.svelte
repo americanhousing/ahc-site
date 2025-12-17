@@ -41,24 +41,15 @@
 	<div class="bg-cumulus mx-auto max-w-[1440px]">
 		<div class="h-4 md:h-6"></div>
 		<div class="flex flex-col gap-4 px-4 md:flex-row md:gap-6 md:px-6">
-			<h2
-				class="font-die-d text-driveway type-display flex-1/2 font-medium transition-[color,transform] duration-500 will-change-transform"
-				class:shifted-beta={shouldDisplayShiftedStage}>
-				Through All-Out<br />
-				Housing Production
-			</h2>
 			<div
-				class="bg-driveway/20 aspect-[476/552] flex-1/2 rounded-[2px] lg:aspect-[684/552]">
-			</div>
-		</div>
-	</div>
-
-	<div class="bg-cumulus mx-auto max-w-[1440px]">
-		<div class="px-4 md:px-6">
-			<div class="h-6 md:h-[200px]"></div>
-			<div class="flex flex-col gap-4 md:flex-row md:gap-6">
-				<div
-					class="md:border-l-driveway md:flex-1/3 md:border-l-1 md:pl-6">
+				class="flex-1/2 transition-[color,transform] duration-500 will-change-transform"
+				class:shifted-beta={shouldDisplayShiftedStage}>
+				<h2 class="font-die-d text-driveway type-display font-medium">
+					Through All-Out<br />
+					Housing Production
+				</h2>
+				<div class="h-[48px]"></div>
+				<div class="sticky top-4 mb-23">
 					<div
 						class="text-driveway font-die-a type-title font-medium">
 						We’re building an abundance of beautiful starter homes
@@ -76,26 +67,36 @@
 							height="10"
 							alt="→" />
 					</a>
-					<div class="md:h-[64px]"></div>
 				</div>
-				<div class="flex-2/3"></div>
 			</div>
-			<div class="h-[160px] md:h-[200px]"></div>
+			<div
+				class="bg-driveway/20 aspect-[476/552] flex-1/2 rounded-[2px] lg:aspect-[684/800]">
+			</div>
 		</div>
 	</div>
 
 	<div class="bg-cumulus">
+		<div class="h-[160px] md:h-[240px]"></div>
 		<div class="mx-auto max-w-[1440px] px-4 md:px-6">
-			<h3 class="font-die-a text-driveway type-title font-medium">
-				Design
+			<h3 class="text-driveway font-die-d type-display font-medium">
+				Beautiful, Adaptable Design
 			</h3>
 		</div>
 		<div class="h-4 md:h-[40px]"></div>
 		<Carousel
 			images={[
-				"https://picsum.photos/1440/1000",
-				"https://picsum.photos/1440/1200",
-				"https://picsum.photos/1440/1300"
+				{
+					src: "https://picsum.photos/1440/1000",
+					caption: "Caption for image one"
+				},
+				{
+					src: "https://picsum.photos/1440/1200",
+					caption: "Caption for image two"
+				},
+				{
+					src: "https://picsum.photos/1440/1300",
+					caption: "Caption for image three"
+				}
 			]}
 			marginSize={0.1}
 			gap={24} />
@@ -246,7 +247,7 @@
 
 	<div class="bg-cumulus">
 		<div class="mx-auto max-w-[1440px] px-4 md:px-6">
-			<h3 class="font-die-a text-driveway type-title font-medium">
+			<h3 class="text-driveway font-die-d type-display font-medium">
 				Timeline
 			</h3>
 		</div>
@@ -305,7 +306,7 @@
 	<div class="bg-cumulus">
 		<div class="mx-auto flex max-w-[1440px] px-4 md:px-6">
 			<h5 class="text-red font-die-d type-display font-medium">
-				Move in. Make babies. Save America.
+				The new home of the American Dream.
 			</h5>
 		</div>
 		<div class="h-6 md:h-[40px]"></div>

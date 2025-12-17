@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
 
+	type ImageItem = {
+		src: string;
+		caption?: string;
+	};
+
 	type Props = {
-		images: string[];
+		images: ImageItem[];
 		marginSize: number;
 		gap: number;
 	};
@@ -60,13 +65,27 @@
 		return visibleOffsets.map((offset) => {
 			const index = normalizeIndex(indexForCurrentImage + offset);
 
+			const imageItem = images.at(index);
+
 			return {
 				key: `${index}-${offset}`,
 				offset,
 				index,
-				image: images.at(index)
+				src: imageItem?.src,
+				caption: imageItem?.caption
 			};
 		});
+	});
+
+	let currentCaption = $derived.by(() => {
+		return images.at(indexForCurrentImage)?.caption;
+	});
+
+	let styleForCaption = $derived.by(() => {
+		const { width } = baseImageDimensions;
+		const leftOffset = (windowSize.width - width) * 0.5;
+
+		return `left: ${leftOffset}px`;
 	});
 
 	let stylesForSlots = $derived.by(() => {
@@ -189,7 +208,9 @@
 			return;
 		}
 
-		const handle = (event.target as HTMLElement | null)?.closest("[data-carousel-handle]");
+		const handle = (event.target as HTMLElement | null)?.closest(
+			"[data-carousel-handle]"
+		);
 
 		if (handle === null) {
 			return;
@@ -225,7 +246,10 @@
 		}
 
 		const normalized = deltaX / slideDistance;
-		const clamped = Math.max(-maxSlideOffset, Math.min(maxSlideOffset, normalized));
+		const clamped = Math.max(
+			-maxSlideOffset,
+			Math.min(maxSlideOffset, normalized)
+		);
 
 		slideOffset = clamped;
 	}
@@ -235,10 +259,15 @@
 			return;
 		}
 
-		const handle = (event.target as HTMLElement | null)?.closest("[data-carousel-handle]");
+		const handle = (event.target as HTMLElement | null)?.closest(
+			"[data-carousel-handle]"
+		);
 		const deltaX = event.clientX - dragStartX;
 		const slideDistance = baseImageDimensions.width + gap;
-		const clickCancelThreshold = Math.max(dragClickThresholdPx, slideDistance * 0.04);
+		const clickCancelThreshold = Math.max(
+			dragClickThresholdPx,
+			slideDistance * 0.04
+		);
 		const distance = Math.abs(deltaX);
 		const normalized = slideDistance <= 0 ? 0 : deltaX / slideDistance;
 
@@ -322,17 +351,18 @@
 
 <div class="flex flex-col gap-4 px-4 md:hidden">
 	{#each images as image, index}
-		<img
+		<div
 			class="bg-driveway/20 h-auto w-full rounded-[2px] object-cover"
-			src={""}
+			src=""
 			width="358"
 			height="213"
-			alt="" />
+			alt={image.caption ?? ""}>
+		</div>
 	{/each}
 </div>
 
 <div
-	class="relative hidden w-screen cursor-grab overflow-hidden md:block"
+	class="relative hidden w-screen cursor-grab md:block"
 	style={styleForContainer}
 	style:touch-action="pan-y"
 	class:cursor-grabbing={isDragging}
@@ -342,38 +372,34 @@
 	onpointercancel={didEndDrag}
 	bind:this={container}>
 	{#each visibleItems as item, slotIndex (item.key)}
-		{#if item.offset !== 0}
-			<button
-				class="absolute top-0 left-0 cursor-pointer border-none bg-transparent p-0 transition-transform duration-400 ease-out will-change-transform"
-				class:transition-none={!transitionsEnabled}
-				style={stylesForSlots[slotIndex]?.container}
-				data-carousel-handle
-				onclick={() => didClickItem(item.offset)}>
-				<img
-					class="bg-driveway/20 cursor-pointer rounded-[2px] object-cover transition-transform duration-400 ease-out"
-					src={""}
-					width="100%"
-					height="100%"
-					alt=""
-					style={stylesForSlots[slotIndex]?.image} />
-			</button>
-		{:else}
-			<button
-				class="absolute top-0 left-0 cursor-pointer border-none bg-transparent p-0 transition-transform duration-400 ease-out will-change-transform"
-				class:transition-none={!transitionsEnabled}
-				style={stylesForSlots[slotIndex]?.container}
-				data-carousel-handle
-				onclick={() => didClickItem(item.offset)}>
-				<img
-					class="bg-driveway/20 rounded-[2px] object-cover transition-transform duration-400 ease-out"
-					src={""}
-					width="100%"
-					height="100%"
-					alt=""
-					style={stylesForSlots[slotIndex]?.image} />
-			</button>
-		{/if}
+		<button
+			class="absolute top-0 left-0 cursor-pointer border-none bg-transparent p-0 transition-transform duration-400 ease-out will-change-transform"
+			class:transition-none={!transitionsEnabled}
+			style={stylesForSlots[slotIndex]?.container}
+			data-carousel-handle
+			onclick={() => didClickItem(item.offset)}>
+			<div
+				class="bg-driveway/20 rounded-[2px] object-cover transition-transform duration-400 ease-out"
+				class:cursor-pointer={item.offset !== 0}
+				src=""
+				width="100%"
+				height="100%"
+				alt={item.caption ?? ""}
+				style={stylesForSlots[slotIndex]?.image}>
+			</div>
+		</button>
 	{/each}
+
+	{#if currentCaption !== undefined}
+		<div
+			class="text-caption font-die-a text-driveway type-title absolute top-full mt-4 font-medium transition-all duration-400"
+			class:duration-10={isSliding === true}
+			class:opacity-0={isSliding === true}
+			style={styleForCaption}>
+			{currentCaption}
+		</div>
+	{/if}
+
 	<div
 		class="bg-cumulus/60 absolute bottom-6 left-1/2 z-100 flex -translate-x-1/2 items-center justify-center rounded-[2px] backdrop-blur-lg">
 		<button

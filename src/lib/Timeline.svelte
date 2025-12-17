@@ -34,7 +34,7 @@
 
 	let dragSamples: DragSample[] = [];
 	const dragSampleLimit = 5;
-	const velocityDecayFactor = 0.15;
+	const velocityDecayFactor = 0.06;
 
 	let itemDimensions = $derived.by(() => {
 		const scaledWidth = (windowWidth * 1116) / 1440;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, onDestroy } from "svelte";
+	import { onMount } from "svelte";
 
 	interface Props {
 		variant?: "default" | "inverted";
@@ -27,11 +27,14 @@
 			isRoofRevealed === true || rect.top < window.innerHeight * 0.6;
 
 		const isAtBottom =
-			window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+			window.innerHeight + window.scrollY >=
+			document.body.scrollHeight - 10;
 
-		shouldElevateTopFloor = isBottomRevealed === true || isAtBottom === true;
+		shouldElevateTopFloor =
+			isBottomRevealed === true || isAtBottom === true;
 
-		shouldElevateBottomFloor = isBottomRevealed === true || isAtBottom === true;
+		shouldElevateBottomFloor =
+			isBottomRevealed === true || isAtBottom === true;
 
 		isRoofRevealed = isRoofRevealed || shouldElevateRoof;
 
@@ -159,17 +162,6 @@
 			<div>
 				© The American Housing Corporation, 2025<br />
 				4422 Supply Ct Road, Austin, TX 78744 USA
-			</div>
-			<div class="min-h-[40px] flex-1 md:h-0 md:min-h-[48px]"></div>
-			<div class="flex items-center gap-6">
-				<img
-					src={isInverted === true
-						? "/images/flag-blue.svg"
-						: "/images/flag-cumulus.svg"}
-					width="52"
-					height="30"
-					alt="" />
-				<span>Always made<br />in the USA</span>
 			</div>
 		</div>
 	</div>
