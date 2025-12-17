@@ -114,6 +114,7 @@
 
 body {
 	-webkit-font-smoothing: antialiased;
+	font-family: times;
 }
 
 .scrollbar-none {

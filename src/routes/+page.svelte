@@ -111,7 +111,7 @@
 				We’re a Vertically Integrated Company
 			</h4>
 			<div
-				class="md:border-l-driveway type-title h-[260px] flex-1/3 font-medium md:border-l-1 md:pl-6 md:font-normal">
+				class="md:border-l-driveway type-title font-die-a h-[260px] flex-1/3 font-medium md:border-l-1 md:pl-6 md:font-medium">
 				We control our fate by owning every step of the real estate
 				development process.
 			</div>
@@ -270,7 +270,7 @@
 			</h4>
 			<div class="h-[24px] md:hidden"></div>
 			<div
-				class="bg-driveway/20 mr-6 aspect-[560/644] h-auto w-full flex-2/3 rounded-[2px] lg:aspect-[920/644]">
+				class="bg-driveway/20 mr-6 aspect-[560/644] h-auto w-full flex-2/3 rounded-[2px] lg:aspect-[920/800]">
 			</div>
 			<div
 				class="md:border-l-driveway flex flex-1/3 flex-col md:border-l-1 md:pl-6">
@@ -279,25 +279,28 @@
 					United We Build
 				</h4>
 				<div class="h-[24px] md:h-[64px]"></div>
-				<div
-					class="text-driveway type-title font-medium md:font-normal">
-					The American Housing Corporation is a growing team of
-					engineers in Austin, Texas. We’re looking for hard workers
-					to reinvent the most important product in America — the
-					family home. If you’re ready to rebuild this country using
-					next-generation technology, we’d like to meet you.
+				<div class="sticky top-[120px]">
+					<div
+						class="text-driveway type-title font-die-a font-medium">
+						The American Housing Corporation is a growing team of
+						engineers in Austin, Texas. We’re looking for hard
+						workers to reinvent the most important product in
+						America — the family home. If you’re ready to rebuild
+						this country using next-generation technology, we’d like
+						to meet you.
+					</div>
+					<div class="h-[64px]"></div>
+					<a
+						href="/careers"
+						class="group font-die-a bg-blue inline-flex cursor-pointer gap-2 self-start rounded-full px-4 py-3 text-[18px] leading-4 text-white">
+						<Rollover text="Join Us" />
+						<img
+							src="./icons/arrow-right-cumulus.svg"
+							width="14"
+							height="8"
+							alt="→" />
+					</a>
 				</div>
-				<div class="h-[64px]"></div>
-				<a
-					href="/careers"
-					class="group font-die-a bg-blue inline-flex cursor-pointer gap-2 self-start rounded-full px-4 py-3 text-[18px] leading-4 text-white">
-					<Rollover text="Join Us" />
-					<img
-						src="./icons/arrow-right-cumulus.svg"
-						width="14"
-						height="8"
-						alt="→" />
-				</a>
 			</div>
 		</div>
 		<div class="h-[160px] md:h-[200px]"></div>

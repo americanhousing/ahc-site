@@ -89,7 +89,7 @@
 					<div class="md:sticky md:top-[120px]">
 						<div class="md:pl-6">
 							<div
-								class="text-cumulus type-body md:type-display -translate-y-2 font-medium">
+								class="font-die-d text-cumulus type-body md:type-display -translate-y-2 font-medium">
 								Over 250 years, a simple truth took form: the
 								American Dream is built, not inherited.
 							</div>
@@ -144,7 +144,7 @@
 					<div class="md:sticky md:top-[120px]">
 						<div class="md:pl-6">
 							<div
-								class="text-cumulus type-body md:type-display -translate-y-2 font-medium">
+								class="font-die-d text-cumulus type-body md:type-display -translate-y-2 font-medium">
 								<p>
 									When families are priced out, cities hollow
 									out. And as cities go, so goes America.
@@ -201,9 +201,12 @@
 				scalable, automated, and powered by American ingenuity.
 			</p>
 			<div class="h-[48px] md:h-[120px]"></div>
-			<section use:bindFadeTarget={"how-we-work"} data-fade="how-we-work">
+			<section
+				class="font-die-a"
+				use:bindFadeTarget={"how-we-work"}
+				data-fade="how-we-work">
 				<div
-					class="type-label md:type-subhead border-b-cumulus text-cumulus border-b-1 pb-[16px] opacity-0 transition-all delay-150 duration-1000 ease-out md:pb-[48px]"
+					class=" type-label md:type-subhead border-b-cumulus text-cumulus border-b-1 pb-[16px] opacity-0 transition-all delay-150 duration-1000 ease-out md:pb-[48px]"
 					class:opacity-100={visibleElements.has("how-we-work")}>
 					Here’s how we work
 				</div>

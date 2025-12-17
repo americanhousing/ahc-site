@@ -126,7 +126,8 @@
 			return;
 		}
 
-		const projectedScrollDelta = velocity * velocityDecayFactor * dragMultiplier * -1;
+		const projectedScrollDelta =
+			velocity * velocityDecayFactor * dragMultiplier * -1;
 		const projectedScrollLeft = scroller.scrollLeft + projectedScrollDelta;
 		const projectedCenter = projectedScrollLeft + scroller.clientWidth / 2;
 
@@ -294,7 +295,7 @@
 						class="h-full w-full rounded-[2px] object-cover" />
 				{/if}
 				<div
-					class="bg-cumulus/20 absolute bottom-6 left-6 flex w-auto gap-2 rounded-[2px] px-6 py-4 font-medium backdrop-blur-lg">
+					class="bg-cumulus/20 font-die-a type-body absolute bottom-6 left-6 flex w-auto gap-2 rounded-[2px] px-6 py-4 font-medium backdrop-blur-lg">
 					<span class="text-cumulus">{item.year}</span>
 					<span class="text-driveway">{item.text}</span>
 				</div>

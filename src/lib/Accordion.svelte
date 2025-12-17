@@ -110,7 +110,7 @@
 				<div use:measureContentHeight={index}>
 					<div class="h-[24px] md:h-[32px] xl:h-[40px]"></div>
 					<div
-						class="text-driveway font-normal transition-opacity duration-250 ease-in-out"
+						class="text-driveway font-medium transition-opacity duration-250 ease-in-out"
 						class:opacity-0={!isActive}
 						class:opacity-100={isActive}
 						class:delay-350={isActive}

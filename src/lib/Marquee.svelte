@@ -74,7 +74,7 @@
 <div class="pointer-events-none invisible absolute">
 	<div class="flex gap-6" bind:this={measureContainer}>
 		{#each items as item}
-			<span class="whitespace-nowrap">{item}</span>
+			<span class="font-die-a whitespace-nowrap">{item}</span>
 		{/each}
 	</div>
 </div>
@@ -83,7 +83,7 @@
 	<div class="marquee-track text-driveway flex h-full items-center gap-6">
 		{#each { length: duplicateCount } as _}
 			{#each items as item}
-				<span class="pointer-events-none whitespace-nowrap"
+				<span class="font-die-a pointer-events-none whitespace-nowrap"
 					>{item}</span>
 			{/each}
 		{/each}
