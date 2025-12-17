@@ -202,7 +202,7 @@
 						{
 							title: "Logistics",
 							text: "Each complete building system is designed to fit into a single intermodal container, enabling efficient shipment to any site in the country."
-						},z
+						},
 						{
 							title: "Installation",
 							text: "Our rowhomes are assembled on-site in days. Simple connections, purpose-built rigs, and repeatable processes make installation safe, fast, and precise."
