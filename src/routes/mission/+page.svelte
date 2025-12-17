@@ -310,7 +310,7 @@
 			<div class="h-[110px] md:h-[200px]"></div>
 		</div>
 	</div>
-	<Footer variant="inverted" />
+	<Footer bg="cumulus" fg="red" />
 </main>
 
 <style>

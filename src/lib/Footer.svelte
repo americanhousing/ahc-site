@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
+	type Color = "red" | "blue" | "cumulus" | "driveway";
+
 	interface Props {
-		variant?: "default" | "inverted";
+		bg?: Color;
+		fg?: Color;
 	}
 
-	let { variant = "default" }: Props = $props();
+	let { bg = "blue", fg = "cumulus" }: Props = $props();
 
-	let isInverted = $derived(variant === "inverted");
+	let iconSuffix = $derived(fg === "cumulus" ? "" : `-${fg}`);
 
 	let thresholdElement = $state<HTMLElement | undefined>();
 	let shouldElevateRoof = $state<boolean>(false);
@@ -55,21 +58,16 @@
 
 <svelte:window onscroll={didChangeViewport} onresize={didChangeViewport} />
 
-<div class={isInverted === true ? "bg-cumulus" : "bg-blue"}>
+<div class="bg-{bg}">
 	<div
-		class="font-die-a type-caption mx-auto flex h-[890px] max-h-[110svh] min-h-[400px] max-w-[1440px] flex-col overflow-hidden p-6 md:h-[70vh] md:max-h-[800px] md:min-h-[400px] {isInverted ===
-		true
-			? 'text-blue'
-			: 'text-cumulus'}"
+		class="font-die-a type-caption mx-auto flex h-[890px] max-h-[110svh] min-h-[400px] max-w-[1440px] flex-col overflow-hidden p-6 text-{fg} md:h-[70vh] md:max-h-[800px] md:min-h-[400px]"
 		bind:this={thresholdElement}>
 		<div class="h-[80px] md:hidden"></div>
 		<img
 			class="hidden w-full translate-y-24 opacity-0 transition-all ease-out md:block md:duration-1000"
 			class:translate-none={shouldElevateRoof}
 			class:opacity-100={shouldElevateRoof}
-			src={isInverted === true
-				? "/images/american-housing-blue.svg"
-				: "/images/american-housing.svg"}
+			src="/images/american-housing{iconSuffix}.svg"
 			width="1385"
 			height="180"
 			alt="American Housing" />
@@ -77,9 +75,7 @@
 			class="w-full translate-y-1/3 opacity-0 transition-all duration-1000 ease-out md:hidden"
 			class:translate-none={shouldElevateRoof}
 			class:opacity-100={shouldElevateRoof}
-			src={isInverted === true
-				? "/images/american-housing-alt-blue.svg"
-				: "/images/american-housing-alt.svg"}
+			src="/images/american-housing-alt{iconSuffix}.svg"
 			width="355"
 			height="172"
 			alt="American Housing" />
@@ -90,43 +86,29 @@
 			class:translate-none={shouldElevateTopFloor}>
 			<div class="flex items-center gap-6">
 				<img
-					src={isInverted === true
-						? "/icons/social-linkedin-blue.svg"
-						: "/icons/social-linkedin.svg"}
+					src="/icons/social-linkedin{iconSuffix}.svg"
 					width="18"
 					height="18"
 					alt="Linkedin" />
 				<img
-					src={isInverted === true
-						? "/icons/social-x-blue.svg"
-						: "/icons/social-x.svg"}
+					src="/icons/social-x{iconSuffix}.svg"
 					width="20"
 					height="18"
 					alt="X" />
 				<img
-					src={isInverted === true
-						? "/icons/social-instagram-blue.svg"
-						: "/icons/social-instagram.svg"}
+					src="/icons/social-instagram{iconSuffix}.svg"
 					width="18"
 					height="18"
 					alt="Instagram" />
 			</div>
 			<div class="flex-1"></div>
-			<div
-				class="font-die-a type-caption flex flex-col gap-6 md:flex-row md:gap-12 {isInverted ===
-				true
-					? 'text-blue'
-					: 'text-cumulus'}">
+			<div class="font-die-a type-caption flex flex-col gap-6 md:flex-row md:gap-12">
 				<a href="/">Contact</a>
 				<a href="/mission">Mission</a>
 				<a href="/faq">FAQs</a>
 				<a href="/">Research</a>
 			</div>
-			<div
-				class="hidden w-[250px] border-b-1 pb-0.5 md:flex {isInverted ===
-				true
-					? 'border-b-blue'
-					: 'border-b-cumulus'}">
+			<div class="hidden w-[250px] border-b-1 border-b-{fg} pb-0.5 md:flex">
 				<input
 					class="relative -top-[1.5px] flex-1 appearance-none text-inherit outline-none"
 					placeholder="Enter Email"
@@ -139,10 +121,7 @@
 		</div>
 		<div class="h-[24px] md:hidden"></div>
 		<div
-			class="flex translate-y-12 border-b-1 pb-0.5 opacity-0 transition-all delay-400 duration-1000 ease-out md:hidden md:w-[250px] {isInverted ===
-			true
-				? 'border-b-blue'
-				: 'border-b-cumulus'}"
+			class="flex translate-y-12 border-b-1 border-b-{fg} pb-0.5 opacity-0 transition-all delay-400 duration-1000 ease-out md:hidden md:w-[250px]"
 			class:opacity-100={shouldElevateBottomFloor}
 			class:translate-none={shouldElevateBottomFloor}>
 			<input
