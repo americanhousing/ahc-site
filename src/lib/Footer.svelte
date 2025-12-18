@@ -106,7 +106,7 @@
 				<a href="/">Contact</a>
 				<a href="/mission">Mission</a>
 				<a href="/faq">FAQs</a>
-				<a href="/">Research</a>
+				<a href="https://ifstudies.org/report-brief/homes-for-young-families-part-2" target="_blank" rel="noopener noreferrer">Research</a>
 			</div>
 			<div class="hidden w-[250px] border-b-1 border-b-{fg} pb-0.5 md:flex">
 				<input

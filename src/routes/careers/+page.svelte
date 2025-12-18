@@ -47,7 +47,7 @@
 				{/each}
 			</div>
 		</div>
-		<div class="h-[160px] md:h-[200px]"></div>
+		<div class="h-[160px] md:h-[240px]"></div>
 	</div>
 	<Footer />
 </main>

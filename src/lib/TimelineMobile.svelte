@@ -215,7 +215,7 @@
 				<div class="bg-driveway/20 h-full w-full rounded-[2px]"></div>
 			{/if}
 			<div
-				class="bg-cumulus/20 font-die-a type-body absolute bottom-0 left-0 flex w-full flex-col rounded-[2px] p-4 py-2 font-medium backdrop-blur-lg">
+				class="bg-cumulus/20 font-die-a type-title absolute bottom-0 left-0 flex w-full flex-col rounded-[2px] p-4 py-2 font-medium backdrop-blur-lg">
 				<span class="text-cumulus">{entry.item.year}</span>
 				<span class="text-driveway">{entry.item.text}</span>
 			</div>

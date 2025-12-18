@@ -310,7 +310,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="h-[110px] md:h-[200px]"></div>
+			<div class="h-[110px] md:h-[240px]"></div>
 		</div>
 	</div>
 	<Footer bg="cumulus" fg="red" />

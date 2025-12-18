@@ -44,12 +44,13 @@
 			<div
 				class="flex-1/2 transition-[color,transform] duration-500 will-change-transform"
 				class:shifted-beta={shouldDisplayShiftedStage}>
-				<h2 class="font-die-d text-driveway type-display font-medium">
-					Through All-Out<br />
-					Housing Production
-				</h2>
-				<div class="h-[48px]"></div>
 				<div class="sticky top-4 mb-23">
+					<h2
+						class="font-die-d text-driveway type-display font-medium">
+						Through All-Out<br />
+						Housing Production
+					</h2>
+					<div class="h-[48px]"></div>
 					<div
 						class="text-driveway font-die-a type-title font-medium">
 						We’re building an abundance of beautiful starter homes
@@ -103,7 +104,7 @@
 	</div>
 
 	<div class="bg-cumulus">
-		<div class="h-[160px] md:h-[200px]"></div>
+		<div class="h-[160px] md:h-[240px]"></div>
 		<div
 			class="mx-auto flex max-w-[1440px] flex-col gap-6 px-4 md:flex-row md:gap-0 md:px-6">
 			<h4
@@ -135,7 +136,7 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway/20 aspect-[424/250] h-auto w-full rounded-[2px]">
+					class="bg-driveway/20 aspect-square h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 			<div
@@ -151,7 +152,7 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway/20 aspect-[424/250] h-auto w-full rounded-[2px]">
+					class="bg-driveway/20 aspect-square h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 			<div
@@ -167,11 +168,11 @@
 					</div>
 				</div>
 				<div
-					class="bg-driveway/20 aspect-[424/250] h-auto w-full rounded-[2px]">
+					class="bg-driveway/20 aspect-square h-auto w-full rounded-[2px]">
 				</div>
 			</div>
 		</div>
-		<div class="h-[160px] md:h-[200px]"></div>
+		<div class="h-[160px] md:h-[240px]"></div>
 	</div>
 
 	<div class="bg-cumulus hidden md:block">
@@ -210,7 +211,7 @@
 					]} />
 			</div>
 		</div>
-		<div class="h-[160px] md:h-[200px]"></div>
+		<div class="h-[160px] md:h-[240px]"></div>
 	</div>
 
 	<div class="bg-cumulus">
@@ -241,7 +242,7 @@
 						class="max-h-[40px] w-auto shrink" />
 				</div>
 			</div>
-			<div class="h-[160px] md:h-[200px]"></div>
+			<div class="h-[160px] md:h-[240px]"></div>
 		</div>
 	</div>
 
@@ -258,7 +259,7 @@
 				{ year: "2025", text: "Company founded in Austin, Texas." },
 				{ year: "2025", text: "Company founded in Austin, Texas." }
 			]} />
-		<div class="h-[160px] md:h-[200px]"></div>
+		<div class="h-[160px] md:h-[240px]"></div>
 	</div>
 
 	<div class="bg-cumulus">
@@ -274,12 +275,12 @@
 			</div>
 			<div
 				class="md:border-l-driveway flex flex-1/3 flex-col md:border-l-1 md:pl-6">
-				<h4
-					class="font-die-d text-driveway type-display hidden font-medium md:block">
-					United We Build
-				</h4>
-				<div class="h-[24px] md:h-[64px]"></div>
 				<div class="sticky top-[120px]">
+					<h4
+						class="font-die-d text-driveway type-display hidden font-medium md:block">
+						United We Build
+					</h4>
+					<div class="h-[24px] md:h-[64px]"></div>
 					<div
 						class="text-driveway type-title font-die-a font-medium">
 						The American Housing Corporation is a growing team of
@@ -303,7 +304,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="h-[160px] md:h-[200px]"></div>
+		<div class="h-[160px] md:h-[240px]"></div>
 	</div>
 
 	<div class="bg-cumulus">
@@ -326,7 +327,7 @@
 		}
 
 		.shifted-beta {
-			transform: translateY(92px);
+			transform: translateY(82px);
 		}
 	}
 
@@ -337,7 +338,7 @@
 		}
 
 		.shifted-beta {
-			transform: translateY(92px);
+			transform: translateY(82px);
 		}
 	}
 
@@ -348,7 +349,7 @@
 		}
 
 		.shifted-beta {
-			transform: translateY(156px);
+			transform: translateY(140px);
 		}
 	}
 </style>
